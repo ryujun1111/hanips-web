@@ -170,7 +170,8 @@ section{padding:120px 0;overflow:hidden;scroll-margin-top:130px}
 .onair-card .label{position:absolute;left:0;right:0;bottom:0;padding:20px 24px;color:#fff;font-size:.85em;font-weight:600;background:linear-gradient(to top,rgba(0,0,0,.75),transparent)}
 
 /* ===== 5. Shorts: 9:16 세로 카드 ===== */
-.shorts-item{width:240px;border-radius:var(--r);overflow:hidden;position:relative;background:var(--dark)}
+/* 데스크탑: 5장이 컨테이너 폭을 꽉 채움 (240px 고정이라 우측이 비었던 문제) */
+.shorts-item{width:calc((100% - 80px)/5);min-width:200px;border-radius:var(--r);overflow:hidden;position:relative;background:var(--dark)}
 .shorts-item img{width:100%;aspect-ratio:9/16;object-fit:cover;transition:opacity .3s}
 .shorts-item::after{content:"+";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;border-radius:50%;background:#fff;color:var(--dark);font-size:1.3em;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
 .shorts-item:hover img{opacity:.3}
@@ -327,7 +328,7 @@ footer .f-copy{color:#8d8d8d;padding-top:24px}
   footer{padding:32px 20px 190px}
   .quick-nav,.to-top{display:none}
   .mo-bar{display:grid}
-  .shorts-item{width:170px}
+  .shorts-item{width:170px;min-width:0}
 }
 @media (max-width:375px){body{font-size:14px}}
 </style>
@@ -497,7 +498,7 @@ footer .f-copy{color:#8d8d8d;padding-top:24px}
     <em>짧게 보는 하니</em>
     <h2><span>HANI <b>Shorts</b></span></h2>
   </div>
-  <div class="rail" id="shortsRail" style="padding-left:24px;padding-right:24px">
+  <div class="rail" id="shortsRail" style="width:min(90%,1500px);margin:0 auto">
     <a class="shorts-item" href="https://www.youtube.com/@doctorihuni" target="_blank" rel="noopener"><img src="images/card-ptosis.jpg" alt="눈매교정 쇼츠" style="object-position:45% 30%"><span>눈매교정</span></a>
     <a class="shorts-item" href="https://www.youtube.com/@doctorihuni" target="_blank" rel="noopener"><img src="images/hero-mo.jpg" alt="눈재수술 쇼츠"><span>눈재수술</span></a>
     <a class="shorts-item" href="https://www.youtube.com/@doctorihuni" target="_blank" rel="noopener"><img src="images/card-teuim.jpg" alt="트임성형 쇼츠"><span>트임성형</span></a>
