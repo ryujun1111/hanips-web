@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>하니성형외과 — 강남역 눈성형·눈재수술</title>
+<meta name="description" content="눈에 집중하는 하니성형외과. 최정훈 대표원장의 눈성형·눈재수술·트임성형·중년눈성형. 서울 서초구 강남대로65길 1 지오다노빌딩 9층.">
+<meta property="og:title" content="하니성형외과 — 강남역 눈성형·눈재수술">
+<meta property="og:description" content="눈에 집중하는 하니성형외과. 최정훈 대표원장의 눈성형·눈재수술 전문 클리닉.">
+<meta property="og:image" content="images/hero-pc.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="images/hani-logo-black.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+/* ===== theface-dr.co.kr 구조 + 딥그린(#005c3e) 토큰 ===== */
+:root{
+  --main:#005c3e;
+  --main-soft:#0a7350;
+  --main-deep:#003d29;
+  --bg:#f2f2f2;
+  --dark:#222222;
+  --gray:#6f6f6f;
+  --line:#dddddd;
+  --r:20px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Pretendard",-apple-system,BlinkMacSystemFont,system-ui,"Apple SD Gothic Neo",sans-serif;font-size:20px;font-weight:400;letter-spacing:-0.02em;color:var(--dark);line-height:1.3;word-break:keep-all;background:#fff}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font:inherit;background:none;border:none;cursor:pointer;color:inherit}
+input,select{font:inherit}
+.wrap{width:min(80%,1500px);margin:0 auto}
+section{padding:120px 0;overflow:hidden;scroll-margin-top:130px}
+.bg-gray{background:var(--bg)}
+.bg-dark{background:var(--dark)}
+.bg-green{background:var(--main)}
+
+/* 섹션 헤드 */
+.tt{text-align:center;padding-bottom:60px}
+.tt em{display:block;font-style:normal;font-size:1.1em;font-weight:600;padding-bottom:26px}
+.tt h2{font-family:"Poppins","Pretendard",sans-serif;font-size:2.5em;font-weight:700;line-height:1.4;letter-spacing:-0.02em;overflow:hidden}
+.tt h2 span{display:inline-block;transform:translateY(110%);transition:transform 1.5s cubic-bezier(.19,1,.22,1)}
+.tt.on h2 span{transform:none}
+.tt h2 b{color:var(--main)}
+.tt p{font-size:.9em;line-height:1.5;padding-top:36px;color:var(--gray)}
+.tt.wht em,.tt.wht h2{color:#fff}
+.tt.wht h2 b{color:#5fc79f}
+
+/* 등장 연출 */
+.aos{opacity:0;transform:translateY(30px);transition:opacity 1.2s ease,transform 1.2s cubic-bezier(.19,1,.22,1)}
+.aos.on{opacity:1;transform:none}
+.anipic img{opacity:0;clip-path:polygon(0 0,0 0,0 100%,0 100%);transition:clip-path 2s cubic-bezier(.19,1,.22,1) .3s,opacity 2s .3s}
+.anipic.on img{opacity:1;clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+@media (prefers-reduced-motion:reduce){.aos,.tt h2 span,.anipic img{opacity:1;transform:none;clip-path:none;transition:none}}
+
+/* 알약 버튼 */
+.pill{display:inline-flex;align-items:center;justify-content:space-between;gap:16px;width:200px;height:50px;padding:0 24px;border-radius:99px;background:var(--main);color:#fff;font-size:.85em;transition:.3s}
+.pill:hover{background:var(--dark)}
+.pill-white{background:transparent;border:1px solid #fff}
+.pill-white:hover{background:var(--dark);border-color:var(--dark)}
+.pill-outline{background:transparent;border:1px solid var(--dark);color:var(--dark)}
+.pill-outline:hover{background:var(--main);border-color:var(--main);color:#fff}
+.pill-dark{background:var(--dark);width:268px;justify-content:center;gap:14px}
+.pill-dark:hover{background:var(--main)}
+
+/* 슬라이더 공통 (scroll-snap 가로 레일 + 사각 화살표) */
+.rail{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px}
+.rail::-webkit-scrollbar{display:none}
+.rail>*{scroll-snap-align:center;flex-shrink:0}
+.rail-ctrl{display:flex;gap:10px;justify-content:center;padding-top:36px}
+.rail-ctrl button{width:50px;height:50px;border:1px solid var(--dark);font-size:.9em;transition:.3s}
+.rail-ctrl button:hover{background:var(--dark);color:#fff}
+.rail-ctrl.wht button{border-color:#fff;color:#fff}
+.rail-ctrl.wht button:hover{background:#fff;color:var(--main)}
+
+/* ===== 상단 띠배너 ===== */
+.event-top{position:fixed;top:0;left:0;right:0;z-index:12;height:40px;background:linear-gradient(90deg,#003d29,#0a7350);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.75em}
+.event-top a{font-weight:600}
+/* ===== 헤더 ===== */
+#header{position:fixed;top:40px;left:0;right:0;z-index:11;height:90px;background:rgba(255,255,255,.8);backdrop-filter:blur(4px);transition:background .3s}
+#header:hover{background:#fff}
+.hd-inner{position:relative;height:100%;display:flex;align-items:center;justify-content:flex-end;gap:16px;padding:0 30px}
+.hd-logo{position:absolute;left:30px;top:50%;transform:translateY(-50%)}
+.hd-logo img{width:clamp(90px,8vw,200px)}
+#gnb{display:flex;justify-content:flex-end;gap:28px}
+#gnb a{font-size:15px;font-weight:300;letter-spacing:-0.5px;position:relative;padding:8px 0}
+#gnb a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--main);transition:width .4s}
+#gnb a:hover{color:var(--main)}
+#gnb a:hover::after{width:100%}
+.hd-mo{display:none}
+/* visibility까지 꺼야 닫힌 상태에서 Tab 포커스가 안 들어간다 */
+.sitemap{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .4s,visibility .4s}
+.sitemap.open{opacity:1;visibility:visible;pointer-events:auto}
+.sitemap ul{text-align:center}
+.sitemap a{display:block;color:#fff;font-size:20px;padding:14px 0;transition:.2s}
+.sitemap a:hover{color:#5fc79f}
+.sitemap .close{position:absolute;top:30px;right:30px;color:#fff;font-size:34px;line-height:1}
+
+/* ===== 히어로 슬라이더 ===== */
+.visual{padding:130px 0 0;position:relative}
+.vis-slider{position:relative;aspect-ratio:2000/708;overflow:hidden}
+.vis-slide{position:absolute;inset:0;opacity:0;transition:opacity .8s}
+.vis-slide.act{opacity:1}
+.vis-slide img{width:100%;height:100%;object-fit:cover}
+.vis-slide::after{content:"";position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.55),rgba(0,0,0,.12) 60%),linear-gradient(to top,rgba(0,0,0,.35),transparent 40%)}
+.vis-copy{position:absolute;left:8%;top:50%;transform:translateY(-50%);color:#fff;z-index:2;text-shadow:0 0 8px rgba(0,0,0,.4)}
+.vis-copy em{display:block;font-style:normal;font-size:.9em;padding-bottom:14px;opacity:.9}
+.vis-copy h3,.vis-copy h1{font-size:2.2em;font-weight:700;line-height:1.35}
+.vis-ctrl{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);width:min(50%,420px);display:flex;align-items:center;gap:14px;z-index:3;color:#fff;text-shadow:0 0 5px rgba(0,0,0,.5);font-size:.8em}
+.vis-ctrl button{color:#fff;font-size:1.1em;padding:4px 8px}
+.vis-bar{flex:1;height:6px;border-radius:9px;background:rgba(255,255,255,.5);overflow:hidden}
+.vis-bar i{display:block;height:100%;width:0;background:var(--main-soft);transition:width .5s}
+
+/* ===== 1. Signature: 원형 탭 + 카드 ===== */
+.sec-sig{position:relative;padding-bottom:0}
+.sig-tabs{display:flex;justify-content:center;gap:44px;padding-bottom:60px}
+.sig-tab{display:flex;flex-direction:column;align-items:center;gap:16px;font-size:.85em;color:var(--dark);letter-spacing:.02em;transition:color .3s}
+.sig-tab img{width:130px;height:130px;object-fit:cover;border-radius:50%;border:4px solid #fff;box-shadow:0 0 0 1px var(--line),0 6px 20px rgba(0,0,0,.08);transition:box-shadow .3s,transform .3s;filter:saturate(.85)}
+.sig-tab:hover img{transform:translateY(-4px);box-shadow:0 0 0 1px var(--line),0 14px 30px rgba(0,0,0,.14)}
+.sig-tab.act{color:var(--main);font-weight:600}
+.sig-tab.act img{box-shadow:0 0 0 3px var(--main),0 10px 26px rgba(0,92,62,.22);filter:none}
+.sig-tab:nth-child(1) img{object-position:45% 35%}
+.sig-tab:nth-child(2) img{object-position:50% 25%}
+.sig-tab:nth-child(3) img{object-position:50% 38%}
+.sig-tab:nth-child(4) img{object-position:50% 30%}
+.sig-tab:nth-child(5) img{object-position:50% 35%}
+.sig-band{position:relative}
+.sig-band::after{content:"";position:absolute;left:0;right:0;bottom:0;height:270px;background:var(--main)}
+.sig-card{position:relative;z-index:1;display:flex;gap:5vw;align-items:center;width:min(80%,1100px);margin:0 auto;padding-bottom:60px}
+.sig-card .pic{width:44%;flex-shrink:0;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;box-shadow:0 10px 40px rgba(0,0,0,.15)}
+.sig-card .pic img{width:100%;height:100%;object-fit:cover}
+.sig-txt{padding-top:40px}
+.sig-txt h3{font-size:1.4em;font-weight:600;padding-bottom:20px}
+.sig-txt .num{font-family:"Poppins",sans-serif;color:var(--main);font-weight:700;font-size:.9em;display:block;padding-bottom:10px}
+.sig-txt p{font-size:.85em;line-height:1.7;color:var(--gray)}
+.sig-foot{position:relative;z-index:1;text-align:center;padding:56px 0 64px;color:#fff}
+.sig-foot p{font-size:.9em;padding-bottom:24px}
+.sig-foot .pill-white{margin:0 auto;width:220px;justify-content:center}
+
+/* ===== 2. Play: 와이드 배너 슬라이더 (회색 + 하단 그린 밴드) ===== */
+.sec-play{position:relative;background:var(--bg)}
+.sec-play::after{content:"";position:absolute;left:0;right:0;bottom:0;height:220px;background:var(--main)}
+.play-rail-wrap{position:relative;z-index:1}
+.play-item{width:min(720px,86vw);border-radius:var(--r);overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.12);position:relative}
+.play-item img{width:100%;aspect-ratio:54/30;object-fit:cover}
+.play-item span{position:absolute;left:0;right:0;bottom:0;padding:18px 24px;color:#fff;font-size:.85em;font-weight:600;background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.4) 70%,transparent);text-shadow:0 1px 6px rgba(0,0,0,.7)}
+.play-foot{position:relative;z-index:1;text-align:center;padding-top:48px;color:#fff}
+.play-foot p{font-size:.9em;padding-bottom:22px}
+.play-foot .pill-white{margin:0 auto;width:220px;justify-content:center}
+
+/* ===== 3. Media: 다크 매스너리 ===== */
+.selfie-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1580px;margin:0 auto}
+.selfie-grid .cell{border-radius:var(--r);overflow:hidden;position:relative;transition:opacity .3s}
+.selfie-grid .cell:hover{opacity:.7}
+.selfie-grid .cell img{width:100%;height:100%;object-fit:cover;aspect-ratio:1/1}
+.selfie-grid .cell:nth-child(2n) img{aspect-ratio:1/1.2}
+.selfie-grid .cell span{position:absolute;left:0;right:0;bottom:0;padding:14px 18px;font-size:.7em;color:#fff;background:linear-gradient(to top,rgba(0,0,0,.8),rgba(0,0,0,.35) 75%,transparent);text-shadow:0 1px 6px rgba(0,0,0,.6)}
+
+/* ===== 4. On Air: 유튜브 카드 2개 ===== */
+.onair-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1100px;margin:0 auto}
+.onair-card{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:16/9;background:#000;display:block}
+.onair-card img{width:100%;height:100%;object-fit:cover;opacity:.85;transition:transform .5s,opacity .3s}
+.onair-card:hover img{transform:scale(1.04);opacity:1}
+.onair-card .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:68px;border-radius:50%;background:rgba(0,92,62,.9);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2em;padding-left:6px}
+.onair-card .label{position:absolute;left:0;right:0;bottom:0;padding:20px 24px;color:#fff;font-size:.85em;font-weight:600;background:linear-gradient(to top,rgba(0,0,0,.75),transparent)}
+
+/* ===== 5. Shorts: 9:16 세로 카드 ===== */
+.shorts-item{width:240px;border-radius:var(--r);overflow:hidden;position:relative;background:var(--dark)}
+.shorts-item img{width:100%;aspect-ratio:9/16;object-fit:cover;transition:opacity .3s}
+.shorts-item::after{content:"+";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;border-radius:50%;background:#fff;color:var(--dark);font-size:1.3em;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
+.shorts-item:hover img{opacity:.3}
+.shorts-item:hover::after{opacity:1}
+.shorts-item span{position:absolute;left:0;right:0;bottom:0;padding:16px;color:#fff;font-size:.75em;font-weight:600;background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.4) 70%,transparent);text-shadow:0 1px 6px rgba(0,0,0,.7)}
+.shorts-foot{text-align:center;padding-top:44px}
+
+/* ===== 6. 그린 풀블리드 배너 슬라이더 ===== */
+.sec-greenband{padding:100px 0}
+.gb-item{width:min(560px,80vw);border-radius:var(--r);overflow:hidden;position:relative}
+.gb-item img{width:100%;aspect-ratio:54/30;object-fit:cover}
+.gb-item span{position:absolute;left:0;right:0;bottom:0;padding:16px 20px;color:#fff;font-size:.8em;font-weight:600;background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.4) 70%,transparent);text-shadow:0 1px 6px rgba(0,0,0,.7)}
+
+/* ===== 7. Event 카드 ===== */
+.event-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1300px;margin:0 auto}
+.event-card{text-align:center}
+.event-card .pic{border-radius:var(--r);overflow:hidden;aspect-ratio:1/1}
+.event-card .pic img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.event-card:hover .pic img{transform:scale(1.05)}
+.event-card h3{font-size:1.2em;font-weight:600;padding:30px 0 10px}
+.event-card p{font-size:.8em;color:var(--gray);padding-bottom:22px}
+.event-card .pill-outline{width:170px;justify-content:center;margin:0 auto;height:44px}
+
+/* ===== 8. Program 5칸 + 장비 ===== */
+.prog-grid{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:230px 230px;gap:20px}
+.prog-item{position:relative;border-radius:var(--r);overflow:hidden;display:flex;align-items:flex-end;padding:35px;color:#fff;background:#000;transition:padding-bottom .3s}
+.prog-item:hover{padding-bottom:45px}
+.prog-item:first-child{grid-row:span 2}
+.prog-item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.75}
+/* 01 상담 장면: 세로 프레임에서 원장 머리가 잘려 크롭 기준을 왼쪽으로 */
+.prog-item:first-child img{object-position:30% 50%}
+/* 그라디언트가 z-index 0이면 absolute 이미지 밑에 깔린다 — 이미지 위(1), 캡션 맨 위(2) */
+.prog-item::before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.78),rgba(0,0,0,.25) 60%,transparent);z-index:1}
+.prog-item .cap{position:relative;z-index:2;text-shadow:0 1px 8px rgba(0,0,0,.7)}
+.prog-item .cap em{display:block;font-style:normal;font-size:.8em;opacity:.85;padding-bottom:6px}
+.prog-item .cap h3{font-size:1.4em;font-weight:600;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+.equip{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;padding-top:60px}
+.equip-item{background:#fff;border-radius:16px;padding:20px 12px;text-align:center;border:1px solid var(--line)}
+.equip-item img{height:110px;width:auto;margin:0 auto;object-fit:contain}
+.equip-item p{font-size:.7em;color:var(--gray);padding-top:12px}
+.equip-item.text-only{display:flex;align-items:center;justify-content:center}
+.equip-item.text-only p{font-size:.8em;font-weight:600;color:var(--dark);padding:0}
+
+/* ===== 9. 원장 ===== */
+.doctor-grid{display:flex;gap:5vw;align-items:center;max-width:1100px;margin:0 auto}
+.doctor-grid .pic{width:40%;flex-shrink:0;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5}
+.doctor-grid .pic img{width:100%;height:100%;object-fit:cover;object-position:top}
+.doctor-txt em{display:block;font-style:normal;font-family:"Poppins",sans-serif;color:var(--main);font-weight:600;font-size:.8em;padding-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.doctor-txt .name{font-size:1.6em;font-weight:700}
+.doctor-txt .role{font-size:.85em;color:var(--gray);padding:8px 0 28px;border-bottom:1px solid var(--line);margin-bottom:28px}
+.doctor-txt .quote{font-size:.95em;line-height:1.75;padding-bottom:26px}
+.doctor-txt li{display:flex;gap:12px;font-size:.85em;color:var(--gray);padding:10px 0}
+.doctor-txt li::before{content:"—";color:var(--main);font-weight:700;flex-shrink:0}
+
+/* ===== 10. Quick Consultation: 다크 카드 + 폼 ===== */
+.contact-card{background:var(--dark);border-radius:var(--r);padding:80px 100px;display:flex;gap:4vw;align-items:center;justify-content:space-between}
+.contact-card .txt em{display:block;font-style:normal;color:#5fc79f;font-weight:600;font-size:1.1em;padding-bottom:20px}
+.contact-card .txt h2{font-family:"Poppins","Pretendard",sans-serif;color:#fff;font-size:2.2em;font-weight:700;line-height:1.4}
+.contact-card .txt h2 b{color:#5fc79f}
+.contact-card .txt p{color:rgba(255,255,255,.7);font-size:.85em;padding-top:24px;line-height:1.6}
+.qform{display:grid;grid-template-columns:320px 150px;grid-template-rows:repeat(3,60px);gap:10px;flex-shrink:0}
+.qform input,.qform select{height:60px;padding:0 20px;border:1px solid #444;background:#2e2e2e;color:#fff;border-radius:5px;font-size:.8em}
+.qform input::placeholder{color:#999}
+.qform button{grid-area:1/2/4/3;background:var(--main);color:#fff;font-size:.85em;font-weight:600;border-radius:5px;transition:.3s}
+.qform button:hover{background:var(--main-soft)}
+.qform .agree{grid-column:1/3;display:flex;align-items:center;gap:8px;color:#aaa;font-size:.7em;padding-top:4px}
+.qform .agree input{width:16px;height:16px;accent-color:var(--main)}
+.qform-note{grid-column:1/3;color:#777;font-size:.65em;padding-top:2px}
+
+/* ===== 11. Contact: 지도 + 정보 ===== */
+.loc-grid{display:flex;gap:4vw}
+.loc-txt{width:50%}
+.loc-map{width:50%;border-radius:var(--r);overflow:hidden;min-height:420px;background:#e8e8e8}
+.loc-map iframe{width:100%;height:100%;border:0;display:block}
+.loc-txt dl{padding:40px 0;border-top:1px solid var(--line)}
+.loc-txt dl:first-of-type{border-top:none;padding-top:0}
+.loc-txt dt{font-size:.8em;font-weight:600;color:var(--gray);padding-bottom:10px;letter-spacing:.04em;text-transform:uppercase;font-family:"Poppins","Pretendard",sans-serif}
+.loc-txt dd{font-size:.9em;line-height:1.6}
+.loc-txt .tel{font-family:"Poppins",sans-serif;font-size:1.6em;font-weight:700;color:var(--main)}
+.loc-tags{display:flex;gap:10px;padding-top:14px;flex-wrap:wrap}
+.loc-tags span{background:var(--main);color:#fff;font-size:.7em;padding:6px 16px;border-radius:99px}
+.loc-btns{display:flex;gap:10px;padding-top:20px;flex-wrap:wrap}
+.loc-btns a{background:#fff;border:1px solid var(--line);font-size:.75em;padding:10px 22px;border-radius:99px;transition:.3s}
+.loc-btns a:hover{border-color:var(--main);color:var(--main)}
+
+/* ===== 푸터 ===== */
+footer{background:var(--bg);border-top:1px solid rgba(73,59,59,.1);padding:48px 0 130px;font-size:16px}
+footer .f-links{display:flex;gap:24px;font-weight:700;padding-bottom:24px}
+footer .f-info{color:#5f5f5f;line-height:1.7}
+footer .f-copy{color:#8d8d8d;padding-top:24px}
+
+/* ===== 퀵바 / TOP / 모바일 탭바 ===== */
+.quick-nav{position:fixed;right:0;top:50%;transform:translateY(-50%);width:90px;background:rgba(255,255,255,.9);border:1px solid #dadada;border-right:none;border-radius:10px 0 0 10px;z-index:10}
+.quick-nav a{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 0;font-size:12px;border-bottom:1px solid #eee;transition:.2s}
+.quick-nav a:last-child{border-bottom:none}
+.quick-nav a:hover{background:#fff;color:var(--main)}
+.quick-nav img{width:28px;height:28px;object-fit:contain;filter:invert(1) brightness(.2)}
+.to-top{position:fixed;right:29px;bottom:40px;width:36px;height:36px;border-radius:50%;background:var(--main);color:#fff;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center;z-index:10}
+.mo-bar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:15;background:#fff;border-top:1px solid var(--line);grid-template-columns:repeat(4,1fr);height:70px}
+.mo-bar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:11px;color:var(--dark)}
+.mo-bar a img{width:24px;height:24px;object-fit:contain;filter:invert(1) brightness(.2)}
+.mo-bar a.point{background:var(--main);color:#fff}
+.mo-bar a.point img{filter:none}
+
+/* ===== 반응형 ===== */
+@media (max-width:1279px){
+  .event-top{height:30px}
+  #header{top:30px;height:50px;background:#fff}
+  .hd-logo{left:50%;transform:translate(-50%,-50%)}
+  .hd-logo img{width:140px}
+  #gnb{display:none}
+  .hd-mo{display:flex;width:100%;justify-content:space-between;align-items:center}
+  .visual{padding-top:80px}
+}
+@media (max-width:1024px){
+  body{font-size:15px}
+  section{padding:70px 20px;scroll-margin-top:80px}
+  .wrap{width:100%}
+  :root{--r:10px}
+  .tt{padding-bottom:40px}
+  .vis-slider{aspect-ratio:4/3}
+  .vis-slide::after{background:linear-gradient(to top,rgba(0,0,0,.6),rgba(0,0,0,.15))}
+  .vis-copy{left:20px;right:20px;top:auto;bottom:70px;transform:none}
+  .vis-copy h3,.vis-copy h1{font-size:1.5em}
+  .sig-tabs{flex-wrap:wrap;gap:8px 14px}
+  .sig-tab{font-size:.8em;gap:10px}
+  .sig-tab img{width:88px;height:88px;border-width:3px}
+  .sig-card{flex-direction:column;width:100%;gap:24px}
+  .sig-card .pic{width:min(100%,340px)}
+  .sig-card .sig-txt{padding:24px 20px;text-align:center;background:#fff;border-radius:10px;width:min(100%,340px);box-shadow:0 6px 24px rgba(0,0,0,.12)}
+  .sig-band::after{height:55%}
+  .onair-grid{grid-template-columns:1fr}
+  .event-grid{grid-template-columns:1fr;max-width:400px}
+  .prog-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;gap:10px}
+  .prog-item{min-height:160px;padding:16px}
+  .prog-item:first-child{grid-column:span 2;grid-row:auto;min-height:200px}
+  .prog-item .cap h3{font-size:1em}
+  .equip{grid-template-columns:repeat(3,1fr);gap:10px}
+  .doctor-grid{flex-direction:column}
+  .doctor-grid .pic{width:min(100%,340px)}
+  .selfie-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .contact-card{flex-direction:column;padding:40px 24px;text-align:center}
+  .qform{grid-template-columns:1fr;grid-template-rows:repeat(3,50px) auto auto auto;width:100%}
+  .qform input,.qform select{height:50px}
+  /* 모바일에선 DOM 순서대로 흐르므로 순서 재정렬: 입력들 → 동의 → 버튼 → 안내문 */
+  .qform button{grid-area:auto;grid-column:1;height:54px;order:2}
+  .qform .agree,.qform-note{grid-column:1;text-align:left}
+  .qform .agree{order:1}
+  .qform-note{order:3}
+  .loc-grid{flex-direction:column-reverse}
+  .loc-txt,.loc-map{width:100%}
+  /* min-height만 주면 iframe height:100%가 150px로 떨어진다 */
+  .loc-map{height:300px;min-height:0}
+  footer{padding:32px 20px 190px}
+  .quick-nav,.to-top{display:none}
+  .mo-bar{display:grid}
+  .shorts-item{width:170px}
+}
+@media (max-width:375px){body{font-size:14px}}
+</style>
+</head>
+<body>
+
+<!-- 상단 띠배너 -->
+<div class="event-top"><a href="tel:02-532-8001">눈성형 상담 예약 02-532-8001 — 평일 10:00~19:00 · 토 10:00~16:00</a></div>
+
+<!-- 헤더 -->
+<header id="header">
+  <div class="hd-inner">
+    <a class="hd-logo" href="#"><img src="images/hani-logo-black.png" alt="하니성형외과 로고"></a>
+    <nav id="gnb" aria-label="주 메뉴">
+      <a href="#sig">시그니처</a>
+      <a href="#play">시술안내</a>
+      <a href="#tour">둘러보기</a>
+      <a href="#onair">하니TV</a>
+      <a href="#event">이벤트</a>
+      <a href="#doctor">병원소개</a>
+      <a href="#contact">상담예약</a>
+      <a href="#location">오시는길</a>
+    </nav>
+    <div class="hd-mo">
+      <a href="tel:02-532-8001" aria-label="전화 상담" style="font-size:.85em;font-weight:600">📞</a>
+      <button class="ham" aria-label="전체 메뉴 열기" style="font-size:1.2em">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- 모바일 사이트맵 -->
+<div class="sitemap" id="sitemap">
+  <button class="close" aria-label="메뉴 닫기">×</button>
+  <ul>
+    <li><a href="#sig">시그니처</a></li>
+    <li><a href="#play">시술안내</a></li>
+    <li><a href="#tour">둘러보기</a></li>
+    <li><a href="#onair">하니TV</a></li>
+    <li><a href="#event">이벤트</a></li>
+    <li><a href="#doctor">병원소개</a></li>
+    <li><a href="#contact">상담예약</a></li>
+    <li><a href="#location">오시는길</a></li>
+  </ul>
+</div>
+
+<!-- 히어로 슬라이더 -->
+<section class="visual">
+  <div class="vis-slider">
+    <div class="vis-slide act">
+      <img src="images/hero-pc.jpg" alt="하니성형외과 메인 모델">
+      <div class="vis-copy"><em>Hani Plastic Surgery</em><h1>누구보다 자신있는,<br>아름다운 눈에 집중합니다</h1></div>
+    </div>
+    <div class="vis-slide">
+      <img src="images/sv-eye-1.jpg" alt="하니 원데이 눈성형 배너">
+      <div class="vis-copy"><em>One Day</em><h3>하니 원데이 눈성형</h3></div>
+    </div>
+    <div class="vis-slide">
+      <img src="images/corridor-reception.jpg" alt="하니성형외과 리셉션">
+      <div class="vis-copy"><em>Gangnam, Seoul</em><h3>상담부터 회복까지,<br>대표원장이 직접 함께합니다</h3></div>
+    </div>
+    <div class="vis-ctrl">
+      <button class="vis-prev" aria-label="이전 슬라이드">‹</button>
+      <span class="vis-count">1 / 3</span>
+      <button class="vis-next" aria-label="다음 슬라이드">›</button>
+      <div class="vis-bar"><i></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- 1. Signature -->
+<section class="sec-sig" id="sig">
+  <div class="tt">
+    <em>하니가 집중하는 눈성형</em>
+    <h2><span>HANI <b>Signature</b></span></h2>
+  </div>
+  <div class="sig-tabs">
+    <button class="sig-tab act" data-i="0"><img src="images/card-ptosis.jpg" alt="">눈매교정</button>
+    <button class="sig-tab" data-i="1"><img src="images/hero-mo.jpg" alt="">눈재수술</button>
+    <button class="sig-tab" data-i="2"><img src="images/card-teuim.jpg" alt="">트임성형</button>
+    <button class="sig-tab" data-i="3"><img src="images/card-middle.jpg" alt="">중년눈성형</button>
+    <button class="sig-tab" data-i="4"><img src="images/card-undereye.jpg" alt="">눈밑성형</button>
+  </div>
+  <div class="sig-band">
+    <div class="sig-card">
+      <div class="pic"><img id="sigPic" src="images/card-ptosis.jpg" alt="시그니처 시술 이미지" style="object-position:45% 30%"></div>
+      <div class="sig-txt">
+        <span class="num" id="sigNum">01</span>
+        <h3 id="sigTitle">눈매교정</h3>
+        <p id="sigDesc">처진 눈꺼풀을 올려 또렷한 눈매 라인을 만드는 수술입니다. 개인의 눈 상태에 맞춰 절개 범위와 방법을 계획합니다.</p>
+      </div>
+    </div>
+    <div class="sig-foot">
+      <p>궁금한 시술이 있다면 대표원장 상담에서 자세히 안내드립니다.</p>
+      <a class="pill pill-white" href="#contact">상담 예약하기</a>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Play: 와이드 배너 슬라이더 -->
+<section class="sec-play" id="play">
+  <div class="tt">
+    <em>하니의 시술을 한눈에</em>
+    <h2><span>HANI <b>Play</b></span></h2>
+  </div>
+  <div class="play-rail-wrap">
+    <div class="rail" id="playRail">
+      <div class="play-item"><img src="images/sv-eye-1.jpg" alt="원데이 눈성형 배너"><span>원데이 눈성형</span></div>
+      <div class="play-item"><img src="images/sv-eye-2.jpg" alt="자연유착 배너"><span>자연유착</span></div>
+      <div class="play-item"><img src="images/sv-eye-3.jpg" alt="부분절개 배너"><span>부분절개</span></div>
+      <div class="play-item"><img src="images/sv-eye-4.jpg" alt="눈매교정 배너"><span>눈매교정</span></div>
+      <div class="play-item"><img src="images/sv-eye-5.jpg" alt="트임성형 배너"><span>트임성형</span></div>
+      <div class="play-item"><img src="images/sv-eye-6.jpg" alt="눈밑성형 배너"><span>눈밑성형</span></div>
+    </div>
+    <div class="rail-ctrl"><button data-rail="playRail" data-dir="-1" aria-label="이전">‹</button><button data-rail="playRail" data-dir="1" aria-label="다음">›</button></div>
+  </div>
+  <div class="play-foot">
+    <p>모든 시술은 상담 후 개인의 눈 상태에 맞춰 계획됩니다.</p>
+    <a class="pill pill-white" href="#contact">시술 상담하기</a>
+  </div>
+</section>
+
+<!-- 3. Media: 다크 매스너리 (둘러보기) -->
+<section class="bg-dark" id="tour">
+  <div class="wrap">
+    <div class="tt wht">
+      <em>하니성형외과 둘러보기</em>
+      <h2><span>HANI <b>Media</b></span></h2>
+    </div>
+    <div class="selfie-grid anipic">
+      <div class="cell"><img src="images/corridor-reception.jpg" alt="리셉션"><span>리셉션</span></div>
+      <div class="cell"><img src="images/facility-lounge.jpg" alt="라운지"><span>라운지</span></div>
+      <div class="cell"><img src="images/lounge-02.jpg" alt="대기 공간"><span>대기 공간</span></div>
+      <div class="cell"><img src="images/consult-room.jpg" alt="상담실"><span>상담실</span></div>
+      <div class="cell"><img src="images/facility-or.jpg" alt="수술실"><span>수술실</span></div>
+      <div class="cell"><img src="images/facility-recovery.jpg" alt="회복실"><span>회복실</span></div>
+      <div class="cell"><img src="images/powder-room.jpg" alt="파우더룸"><span>파우더룸</span></div>
+      <div class="cell"><img src="images/lounge-03.jpg" alt="라운지 전경"><span>라운지 전경</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. On Air -->
+<section id="onair">
+  <div class="wrap">
+    <div class="tt">
+      <em>하니성형외과 유튜브</em>
+      <h2><span>HANI <b>On Air</b></span></h2>
+    </div>
+    <div class="onair-grid">
+      <a class="onair-card aos" href="https://www.youtube.com/@doctorihuni" target="_blank" rel="noopener">
+        <img src="images/square-doctor.jpg" alt="하니성형외과 유튜브 채널">
+        <span class="play">▶</span>
+        <span class="label">최정훈 대표원장의 눈성형 이야기</span>
+      </a>
+      <a class="onair-card aos" href="https://www.youtube.com/@doctorihuni" target="_blank" rel="noopener">
+        <img src="images/square-natural.jpg" alt="하니성형외과 유튜브 영상">
+        <span class="play">▶</span>
+        <span class="label">하니성형외과 채널 보러가기</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Shorts -->
+<section class="bg-gray">
+  <div class="tt">
+    <em>짧게 보는 하니</em>
+    <h2><span>HANI <b>Shorts</b></span></h2>
+  </div>
+  <div class="rail" id="shortsRail" style="padding-left:24px;padding-right:24px">
+    <a class="shorts-item" href="https://www.youtube.com/@doctorihuni" target="_blank" rel="noopener"><img src="images/card-ptosis.jpg" alt="눈매교정 쇼츠" style="object-position:45% 30%"><span>눈매교정</span></a>
+    <a class="shorts-item" href="https://www.youtube.com/@doctorihuni" target="_blank" rel="noopener"><img src="images/hero-mo.jpg" alt="눈재수술 쇼츠"><span>눈재수술</span></a>
+    <a class="shorts-item" href="https://www.youtube.com/@doctorihuni" target="_blank" rel="noopener"><img src="images/card-teuim.jpg" alt="트임성형 쇼츠"><span>트임성형</span></a>
+    <a class="shorts-item" href="https://www.youtube.com/@doctorihuni" target="_blank" rel="noopener"><img src="images/card-middle.jpg" alt="중년눈성형 쇼츠"><span>중년눈성형</span></a>
+    <a class="shorts-item" href="https://www.youtube.com/@doctorihuni" target="_blank" rel="noopener"><img src="images/card-undereye.jpg" alt="눈밑성형 쇼츠"><span>눈밑성형</span></a>
+  </div>
+  <div class="rail-ctrl"><button data-rail="shortsRail" data-dir="-1" aria-label="이전">‹</button><button data-rail="shortsRail" data-dir="1" aria-label="다음">›</button></div>
+  <div class="shorts-foot">
+    <a class="pill pill-dark" href="https://www.youtube.com/@doctorihuni" target="_blank" rel="noopener">유튜브 채널 바로가기 ›</a>
+  </div>
+</section>
+
+<!-- 6. 그린 풀블리드 배너 -->
+<section class="bg-green sec-greenband">
+  <div class="tt wht">
+    <em>하니의 시그니처 라인업</em>
+    <h2><span>FOCUS ON <b>Eye</b></span></h2>
+  </div>
+  <div class="rail" id="gbRail" style="padding-left:24px;padding-right:24px">
+    <div class="gb-item"><img src="images/sv-eye-4.jpg" alt="눈매교정 배너"><span>눈매교정</span></div>
+    <div class="gb-item"><img src="images/sv-eye-2.jpg" alt="자연유착 배너"><span>자연유착</span></div>
+    <div class="gb-item"><img src="images/sv-eye-6.jpg" alt="눈밑성형 배너"><span>눈밑성형</span></div>
+    <div class="gb-item"><img src="images/sv-eye-3.jpg" alt="부분절개 배너"><span>부분절개</span></div>
+    <div class="gb-item"><img src="images/sv-eye-5.jpg" alt="트임성형 배너"><span>트임성형</span></div>
+  </div>
+  <div class="rail-ctrl wht"><button data-rail="gbRail" data-dir="-1" aria-label="이전">‹</button><button data-rail="gbRail" data-dir="1" aria-label="다음">›</button></div>
+</section>
+
+<!-- 7. Event -->
+<section id="event">
+  <div class="wrap">
+    <div class="tt">
+      <em>하니성형외과 소식</em>
+      <h2><span>HANI <b>Event</b></span></h2>
+    </div>
+    <div class="event-grid">
+      <div class="event-card aos">
+        <div class="pic"><img src="images/consult-scene-01.jpg" alt="리얼모델 지원 안내"></div>
+        <h3>리얼모델 지원</h3>
+        <p>하니의 리얼모델 지원 안내를 확인해 보세요.</p>
+        <a class="pill pill-outline" href="#contact">자세히 보기</a>
+      </div>
+      <div class="event-card aos">
+        <div class="pic"><img src="images/icon-kakao-chat.png" alt="카카오톡 채널 안내" style="object-fit:contain;padding:26%;background:#f7e94a"></div>
+        <h3>카카오톡 채널</h3>
+        <p>채널 추가하고 편하게 상담을 받아보세요.</p>
+        <a class="pill pill-outline" href="https://pf.kakao.com/_LcYxkG" target="_blank" rel="noopener">채널 추가</a>
+      </div>
+      <div class="event-card aos">
+        <div class="pic"><img src="images/facility-lounge.jpg" alt="온라인 예약 안내"></div>
+        <h3>온라인 예약</h3>
+        <p>전화 없이 원하는 시간에 예약을 남겨보세요.</p>
+        <a class="pill pill-outline" href="#contact">예약 하기</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Program + 장비 -->
+<section class="bg-gray" id="prog">
+  <div class="wrap">
+    <div class="tt">
+      <em>하니는 이렇게 진료합니다</em>
+      <h2><span>THE HANI <b>Program</b></span></h2>
+    </div>
+    <div class="prog-grid aos">
+      <div class="prog-item"><img src="images/consult-scene-01.jpg" alt="1:1 상담 장면"><div class="cap"><em>Program 01</em><h3>대표원장 1:1 상담</h3></div></div>
+      <div class="prog-item"><img src="images/operating-room.jpg" alt="수술실"><div class="cap"><em>Program 02</em><h3>수술 공간</h3></div></div>
+      <div class="prog-item"><img src="images/corridor-recovery.jpg" alt="회복 공간"><div class="cap"><em>Program 03</em><h3>전용 회복 공간</h3></div></div>
+      <div class="prog-item"><img src="images/consult-room.jpg" alt="상담실"><div class="cap"><em>Program 04</em><h3>맞춤 수술 계획</h3></div></div>
+      <div class="prog-item"><img src="images/facility-recovery.jpg" alt="회복실"><div class="cap"><em>Program 05</em><h3>경과 관리</h3></div></div>
+    </div>
+    <div class="equip aos">
+      <div class="equip-item"><img src="images/equip-ulthera.jpg" alt="울쎄라피 프라임 장비"><p>울쎄라피 프라임</p></div>
+      <div class="equip-item"><img src="images/equip-thermage.jpg" alt="써마지 FLX 장비"><p>써마지 FLX</p></div>
+      <div class="equip-item"><img src="images/equip-sofwave.jpg" alt="소프웨이브 장비"><p>소프웨이브</p></div>
+      <div class="equip-item"><img src="images/equip-onda.jpg" alt="온다 장비"><p>온다</p></div>
+      <div class="equip-item"><img src="images/equip-mct.jpg" alt="메타셀 MCT 장비"><p>메타셀 MCT</p></div>
+      <div class="equip-item text-only"><p>린커브 프로</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. 원장 -->
+<section id="doctor">
+  <div class="wrap">
+    <div class="tt">
+      <em>눈에 집중해온 시간</em>
+      <h2><span>OUR <b>Doctor</b></span></h2>
+    </div>
+    <div class="doctor-grid">
+      <div class="pic aos"><img src="images/doctor-standing.jpg" alt="하니성형외과 최정훈 대표원장"></div>
+      <div class="doctor-txt aos">
+        <em>Director</em>
+        <p class="name">최정훈 대표원장</p>
+        <p class="role">성형외과 전문의</p>
+        <p class="quote">"얼굴에서 가장 맘에 드는 곳을 꼽으라면 주저없이 눈을 선택할 수 있도록, 트렌디한 눈수술법을 연구하고 개발해온 노하우를 눈성형에 담습니다."</p>
+        <ul>
+          <li>눈성형·눈재수술에 집중하는 진료</li>
+          <li>상담부터 수술, 경과 관리까지 대표원장 직접 진행</li>
+          <li>개인의 눈 상태에 맞춘 1:1 맞춤 수술 계획</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. Quick Consultation -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-card aos">
+      <div class="txt">
+        <em>빠른 상담</em>
+        <h2>QUICK <b>Consultation</b></h2>
+        <p>남겨주신 내용은 카카오톡 상담으로 이어집니다.<br>평일 10:00–19:00 · 토 10:00–16:00 · 일/공휴일 휴진<br><span style="font-family:Poppins,sans-serif;font-weight:700;color:#5fc79f;font-size:1.4em">02-532-8001</span></p>
+      </div>
+      <!-- 정적 페이지라 서버 전송 없음 — 제출 시 카카오톡 채널로 연결 -->
+      <form class="qform" id="qform">
+        <input type="text" name="name" placeholder="이름" required maxlength="20">
+        <button type="submit">카톡으로<br>상담 신청</button>
+        <input type="tel" name="phone" placeholder="연락처" required maxlength="13" pattern="[0-9\-]{9,13}">
+        <select name="part" required>
+          <option value="">상담 부위 선택</option>
+          <option>눈성형</option><option>눈재수술</option><option>트임성형</option>
+          <option>중년눈성형</option><option>눈밑성형</option><option>기타</option>
+        </select>
+        <label class="agree"><input type="checkbox" id="agree" required>개인정보 수집·이용에 동의합니다 (이름·연락처 / 상담 목적 / 상담 완료 후 파기)</label>
+        <p class="qform-note">제출하면 카카오톡 채널 상담으로 연결됩니다.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- 11. Contact Us: 지도 -->
+<section class="bg-gray" id="location">
+  <div class="wrap">
+    <div class="tt">
+      <em>찾아오시는 길</em>
+      <h2><span>CONTACT <b>Us</b></span></h2>
+    </div>
+    <div class="loc-grid">
+      <div class="loc-txt aos">
+        <dl>
+          <dt>Address</dt>
+          <dd>서울특별시 서초구 강남대로65길 1, 지오다노 건물 9층 (서초동)</dd>
+          <dd class="loc-tags"><span>강남역 인근</span><span>대중교통 편리</span></dd>
+        </dl>
+        <dl>
+          <dt>Tel</dt>
+          <dd class="tel">02-532-8001</dd>
+        </dl>
+        <dl>
+          <dt>Work Hour</dt>
+          <dd>평일 AM 10:00 – PM 07:00<br>토요일 AM 10:00 – PM 04:00<br>일요일·공휴일 휴진</dd>
+          <dd class="loc-btns">
+            <a href="https://map.naver.com/p/search/하니성형외과" target="_blank" rel="noopener">네이버 지도</a>
+            <a href="https://map.kakao.com/?q=하니성형외과" target="_blank" rel="noopener">카카오맵</a>
+            <a href="https://www.instagram.com/hanips.official" target="_blank" rel="noopener">인스타그램</a>
+            <a href="https://www.youtube.com/@doctorihuni" target="_blank" rel="noopener">유튜브</a>
+          </dd>
+        </dl>
+      </div>
+      <div class="loc-map aos">
+        <iframe title="하니성형외과 지도" src="https://maps.google.com/maps?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%84%9C%EC%B4%88%EA%B5%AC%20%EA%B0%95%EB%82%A8%EB%8C%80%EB%A1%9C65%EA%B8%B8%201&z=17&output=embed" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 푸터 -->
+<footer>
+  <div class="wrap">
+    <div class="f-links"><a href="#">개인정보처리방침</a><a href="#">서비스이용약관</a></div>
+    <p class="f-info">하니성형외과 | 대표: 최정훈 | 사업자등록번호: 241-11-02681<br>
+    서울특별시 서초구 강남대로65길 1, 지오다노 건물 9층 (서초동) | TEL 02-532-8001</p>
+    <p class="f-copy">ⓒ 2026 HANI Plastic Surgery. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- PC 퀵바 -->
+<nav class="quick-nav" aria-label="빠른 메뉴">
+  <a href="tel:02-532-8001"><img src="images/icon-phone-consultation.png" alt="">대표전화</a>
+  <a href="https://pf.kakao.com/_LcYxkG" target="_blank" rel="noopener"><img src="images/icon-kakao-chat.png" alt="">카카오톡</a>
+  <a href="#contact"><img src="images/icon-online-reservation.png" alt="">진료예약</a>
+  <a href="https://www.instagram.com/hanips.official" target="_blank" rel="noopener"><img src="images/icon-instagram.png" alt="">인스타</a>
+</nav>
+<a class="to-top" href="#" aria-label="맨 위로">TOP</a>
+
+<!-- 모바일 탭바 -->
+<nav class="mo-bar" aria-label="빠른 상담">
+  <a href="https://pf.kakao.com/_LcYxkG" target="_blank" rel="noopener"><img src="images/icon-kakao-chat.png" alt="">카톡상담</a>
+  <a href="tel:02-532-8001"><img src="images/icon-phone-consultation.png" alt="">전화상담</a>
+  <a href="#location"><span style="font-size:20px;line-height:1">📍</span>오시는길</a>
+  <a class="point" href="#contact"><img src="images/icon-online-reservation.png" alt="">빠른예약</a>
+</nav>
+
+<script>
+// 등장 연출
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+}), {threshold: 0.15});
+document.querySelectorAll('.aos, .tt, .anipic').forEach(el => io.observe(el));
+
+// 히어로 슬라이더
+const slides = document.querySelectorAll('.vis-slide');
+const bar = document.querySelector('.vis-bar i');
+const count = document.querySelector('.vis-count');
+let cur = 0, timer;
+function go(i){
+  slides[cur].classList.remove('act');
+  cur = (i + slides.length) % slides.length;
+  slides[cur].classList.add('act');
+  count.textContent = (cur+1) + ' / ' + slides.length;
+  bar.style.width = ((cur+1)/slides.length*100) + '%';
+}
+function auto(){ clearInterval(timer); timer = setInterval(() => go(cur+1), 4500); }
+document.querySelector('.vis-prev').addEventListener('click', () => { go(cur-1); auto(); });
+document.querySelector('.vis-next').addEventListener('click', () => { go(cur+1); auto(); });
+go(0); auto();
+
+// 시그니처 탭
+const SIG = [
+  {t:'눈매교정', d:'처진 눈꺼풀을 올려 또렷한 눈매 라인을 만드는 수술입니다. 개인의 눈 상태에 맞춰 절개 범위와 방법을 계획합니다.', img:'images/card-ptosis.jpg', pos:'45% 30%'},
+  {t:'눈재수술', d:'이전 수술 상태를 확인한 뒤, 풀린 눈·겹쌍꺼풀·흉터 등 문제에 맞는 재수술 계획을 세웁니다.', img:'images/hero-mo.jpg', pos:'50% 25%'},
+  {t:'트임성형', d:'앞트임·뒷트임 등으로 원하는 눈의 느낌을 만드는 수술입니다. 과하지 않게, 원하는 인상 그대로 계획합니다.', img:'images/card-teuim.jpg', pos:'50% 35%'},
+  {t:'중년눈성형', d:'상안검·하안검 등 나이에 따른 눈 주변 변화를 개선하는 수술입니다. 우아하고 자연스러운 인상을 목표로 합니다.', img:'images/card-middle.jpg', pos:'50% 25%'},
+  {t:'눈밑성형', d:'눈밑 지방·다크서클 고민을 개선해 밝고 편안한 인상을 만드는 수술입니다.', img:'images/card-undereye.jpg', pos:'50% 30%'}
+];
+document.querySelectorAll('.sig-tab').forEach(tab => tab.addEventListener('click', () => {
+  document.querySelectorAll('.sig-tab').forEach(t => t.classList.remove('act'));
+  tab.classList.add('act');
+  const s = SIG[+tab.dataset.i];
+  const pic = document.getElementById('sigPic');
+  pic.src = s.img;
+  pic.style.objectPosition = s.pos;
+  document.getElementById('sigTitle').textContent = s.t;
+  document.getElementById('sigDesc').textContent = s.d;
+  document.getElementById('sigNum').textContent = String(+tab.dataset.i+1).padStart(2,'0');
+}));
+
+// 가로 레일 화살표 (Play/Shorts/그린밴드 공용)
+document.querySelectorAll('.rail-ctrl button').forEach(btn => btn.addEventListener('click', () => {
+  const rail = document.getElementById(btn.dataset.rail);
+  const item = rail.firstElementChild;
+  rail.scrollBy({left: (item.offsetWidth + 20) * +btn.dataset.dir, behavior: 'smooth'});
+}));
+
+// 사이트맵
+const sm = document.getElementById('sitemap');
+function smSet(open){ sm.classList.toggle('open', open); document.body.style.overflow = open ? 'hidden' : ''; }
+document.querySelector('.ham').addEventListener('click', () => smSet(true));
+sm.querySelector('.close').addEventListener('click', () => smSet(false));
+sm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => smSet(false)));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') smSet(false); });
+
+// 빠른상담 폼 — 서버 없음: 동의 확인 후 카카오톡 채널로 연결
+document.getElementById('qform').addEventListener('submit', e => {
+  e.preventDefault();
+  if (!e.target.checkValidity()) { e.target.reportValidity(); return; }
+  window.open('https://pf.kakao.com/_LcYxkG', '_blank', 'noopener');
+});
+</script>
+</body>
+</html>
