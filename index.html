@@ -7,7 +7,7 @@
 <meta name="description" content="눈에 집중하는 하니성형외과. 최정훈 대표원장의 눈성형·눈재수술·트임성형·중년눈성형. 서울 서초구 강남대로65길 1 지오다노빌딩 9층.">
 <meta property="og:title" content="하니성형외과 — 강남역 눈성형·눈재수술">
 <meta property="og:description" content="눈에 집중하는 하니성형외과. 최정훈 대표원장의 눈성형·눈재수술 전문 클리닉.">
-<meta property="og:image" content="https://ryujun1111.github.io/hanips-web/images/hero-pc.jpg">
+<meta property="og:image" content="https://ryujun1111.github.io/hanips-web/images/consult-scene-01.jpg">
 <meta property="og:url" content="https://ryujun1111.github.io/hanips-web/">
 <link rel="canonical" href="https://ryujun1111.github.io/hanips-web/">
 <meta property="og:type" content="website">
@@ -111,10 +111,7 @@ section{padding:120px 0;overflow:hidden;scroll-margin-top:130px}
 .vis-copy{position:absolute;left:8%;top:50%;transform:translateY(-50%);color:#fff;z-index:2;text-shadow:0 0 8px rgba(0,0,0,.4)}
 .vis-copy em{display:block;font-style:normal;font-size:.9em;padding-bottom:14px;opacity:.9}
 .vis-copy h3,.vis-copy h1{font-size:2.2em;font-weight:700;line-height:1.35}
-.vis-ctrl{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);width:min(50%,420px);display:flex;align-items:center;gap:14px;z-index:3;color:#fff;text-shadow:0 0 5px rgba(0,0,0,.5);font-size:.8em}
-.vis-ctrl button{color:#fff;font-size:1.1em;padding:4px 8px}
-.vis-bar{flex:1;height:6px;border-radius:9px;background:rgba(255,255,255,.5);overflow:hidden}
-.vis-bar i{display:block;height:100%;width:0;background:var(--main-soft);transition:width .5s}
+.vis-slider{touch-action:pan-y;user-select:none}
 
 /* ===== 1. Signature: 원형 탭 + 카드 ===== */
 .sec-sig{position:relative;padding-bottom:0}
@@ -133,7 +130,9 @@ section{padding:120px 0;overflow:hidden;scroll-margin-top:130px}
 .sig-band::after{content:"";position:absolute;left:0;right:0;bottom:0;height:270px;background:var(--main)}
 .sig-card{position:relative;z-index:1;display:flex;gap:5vw;align-items:center;width:min(80%,1100px);margin:0 auto;padding-bottom:60px}
 .sig-card .pic{width:44%;flex-shrink:0;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;box-shadow:0 10px 40px rgba(0,0,0,.15)}
-.sig-card .pic img{width:100%;height:100%;object-fit:cover}
+/* 화보 스톡컷 대신 눈 부위만 보이도록 확대 크롭 — object-position/transform-origin은 탭별로 JS가 넣는다 */
+.sig-card .pic img{width:100%;height:100%;object-fit:cover;transform:scale(1.9)}
+.sig-note{position:relative;z-index:1;text-align:center;color:rgba(255,255,255,.75);font-size:.7em;padding-bottom:24px}
 .sig-txt{padding-top:40px}
 .sig-txt h3{font-size:1.4em;font-weight:600;padding-bottom:20px}
 .sig-txt .num{font-family:"Poppins",sans-serif;color:var(--main);font-weight:700;font-size:.9em;display:block;padding-bottom:10px}
@@ -141,17 +140,6 @@ section{padding:120px 0;overflow:hidden;scroll-margin-top:130px}
 .sig-foot{position:relative;z-index:1;text-align:center;padding:56px 0 64px;color:#fff}
 .sig-foot p{font-size:.9em;padding-bottom:24px}
 .sig-foot .pill-white{margin:0 auto;width:220px;justify-content:center}
-
-/* ===== 2. Play: 와이드 배너 슬라이더 (회색 + 하단 그린 밴드) ===== */
-.sec-play{position:relative;background:var(--bg)}
-.sec-play::after{content:"";position:absolute;left:0;right:0;bottom:0;height:220px;background:var(--main)}
-.play-rail-wrap{position:relative;z-index:1}
-.play-item{width:min(720px,86vw);border-radius:var(--r);overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.12);position:relative}
-.play-item img{width:100%;aspect-ratio:54/30;object-fit:cover}
-.play-item span{position:absolute;left:0;right:0;bottom:0;padding:18px 24px;color:#fff;font-size:.85em;font-weight:600;background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.4) 70%,transparent);text-shadow:0 1px 6px rgba(0,0,0,.7)}
-.play-foot{position:relative;z-index:1;text-align:center;padding-top:48px;color:#fff}
-.play-foot p{font-size:.9em;padding-bottom:22px}
-.play-foot .pill-white{margin:0 auto;width:220px;justify-content:center}
 
 /* ===== 3. Media: 다크 매스너리 ===== */
 .selfie-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1580px;margin:0 auto}
@@ -179,12 +167,8 @@ section{padding:120px 0;overflow:hidden;scroll-margin-top:130px}
 .shorts-item:hover::after{opacity:1}
 .shorts-item span{position:absolute;left:0;right:0;bottom:0;padding:16px;color:#fff;font-size:.75em;font-weight:600;background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.4) 70%,transparent);text-shadow:0 1px 6px rgba(0,0,0,.7)}
 .shorts-foot{text-align:center;padding-top:44px}
-
-/* ===== 6. 그린 풀블리드 배너 슬라이더 ===== */
-.sec-greenband{padding:100px 0}
-.gb-item{width:min(560px,80vw);border-radius:var(--r);overflow:hidden;position:relative}
-.gb-item img{width:100%;aspect-ratio:54/30;object-fit:cover}
-.gb-item span{position:absolute;left:0;right:0;bottom:0;padding:16px 20px;color:#fff;font-size:.8em;font-weight:600;background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.4) 70%,transparent);text-shadow:0 1px 6px rgba(0,0,0,.7)}
+/* 영상·후기 구간 부작용/개인차 고지 */
+.media-note{text-align:center;color:var(--gray);font-size:.7em;padding-top:28px}
 
 /* ===== 7. Event 카드 ===== */
 .event-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1300px;margin:0 auto}
@@ -257,6 +241,31 @@ section{padding:120px 0;overflow:hidden;scroll-margin-top:130px}
 .loc-btns{display:flex;gap:10px;padding-top:20px;flex-wrap:wrap}
 .loc-btns a{background:#fff;border:1px solid var(--line);font-size:.75em;padding:10px 22px;border-radius:99px;transition:.3s}
 .loc-btns a:hover{border-color:var(--main);color:var(--main)}
+
+
+/* ===== 12. 진료실 Q&A 카드 슬라이더 ===== */
+.qa-rail,.rec-rail{padding:0 24px 8px}
+.qa-card{width:min(380px,82vw);background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:32px 30px;display:flex;flex-direction:column;gap:12px;box-shadow:0 6px 24px rgba(0,0,0,.05)}
+.qa-card .q{font-family:"Poppins",sans-serif;color:var(--main);font-weight:700;font-size:.9em}
+.qa-card h3{font-size:.95em;font-weight:600;line-height:1.5}
+.qa-card p{font-size:.78em;line-height:1.7;color:var(--gray);flex:1}
+.qa-card em{font-style:normal;font-size:.7em;color:#999}
+/* ===== 13. 회복 안내 텍스트 카드 ===== */
+.rec-card{width:min(307px,78vw);background:#fff;border-top:2px solid var(--main);border-radius:0 0 var(--r) var(--r);padding:28px 26px}
+.rec-card h3{font-size:.85em;font-weight:600;line-height:1.5;padding-bottom:12px}
+.rec-card p{font-size:.78em;line-height:1.7;color:var(--gray)}
+/* ===== 14. FAQ 아코디언 (네이티브 details) ===== */
+.faq-list{max-width:900px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item summary{cursor:pointer;list-style:none;padding:22px 40px 22px 0;font-size:.95em;font-weight:600;position:relative}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::before{content:"Q";font-family:"Poppins",sans-serif;color:var(--main);margin-right:14px}
+.faq-item summary::after{content:"+";position:absolute;right:8px;top:50%;transform:translateY(-50%);color:var(--gray);font-size:1.2em;font-weight:300}
+.faq-item[open] summary::after{content:"–"}
+.faq-item p{font-size:.82em;line-height:1.8;color:var(--gray);padding:0 0 24px 32px}
+.faq-more>summary{cursor:pointer;list-style:none;text-align:center;padding:26px 0;font-size:.85em;font-weight:600;color:var(--main)}
+.faq-more>summary::-webkit-details-marker{display:none}
+.faq-more[open]>summary{display:none}
 
 /* ===== 푸터 ===== */
 footer{background:var(--bg);border-top:1px solid rgba(73,59,59,.1);padding:48px 0 130px;font-size:16px}
@@ -345,12 +354,12 @@ footer .f-copy{color:#8d8d8d;padding-top:24px}
   <div class="hd-inner">
     <a class="hd-logo" href="#"><img src="images/hani-logo-black.png" alt="하니성형외과 로고"></a>
     <nav id="gnb" aria-label="주 메뉴">
-      <a href="#sig">시그니처</a>
-      <a href="#play">시술안내</a>
+      <a href="#sig">시술안내</a>
       <a href="#tour">둘러보기</a>
       <a href="#onair">하니TV</a>
       <a href="#event">이벤트</a>
       <a href="#doctor">병원소개</a>
+      <a href="#faq">자주 묻는 질문</a>
       <a href="#contact">상담예약</a>
       <a href="#location">오시는길</a>
     </nav>
@@ -365,12 +374,12 @@ footer .f-copy{color:#8d8d8d;padding-top:24px}
 <div class="sitemap" id="sitemap">
   <button class="close" aria-label="메뉴 닫기">×</button>
   <ul>
-    <li><a href="#sig">시그니처</a></li>
-    <li><a href="#play">시술안내</a></li>
+    <li><a href="#sig">시술안내</a></li>
     <li><a href="#tour">둘러보기</a></li>
     <li><a href="#onair">하니TV</a></li>
     <li><a href="#event">이벤트</a></li>
     <li><a href="#doctor">병원소개</a></li>
+    <li><a href="#faq">자주 묻는 질문</a></li>
     <li><a href="#contact">상담예약</a></li>
     <li><a href="#location">오시는길</a></li>
   </ul>
@@ -379,23 +388,18 @@ footer .f-copy{color:#8d8d8d;padding-top:24px}
 <!-- 히어로 슬라이더 -->
 <section class="visual">
   <div class="vis-slider">
+    <!-- 스톡 모델 대신 병원 실사(상담 장면·로비·라운지). 화살표/카운터 없이 자동 전환 + 스와이프 -->
     <div class="vis-slide act">
-      <img src="images/hero-pc.jpg" alt="하니성형외과 메인 모델">
+      <img src="images/consult-scene-01.jpg" alt="최정훈 대표원장 1:1 상담 장면" style="object-position:35% 30%">
       <div class="vis-copy"><em>Hani Plastic Surgery</em><h1>누구보다 자신있는,<br>아름다운 눈에 집중합니다</h1></div>
     </div>
     <div class="vis-slide">
-      <img src="images/sv-eye-1.jpg" alt="하니 원데이 눈성형 배너">
-      <div class="vis-copy"><em>One Day</em><h3>하니 원데이 눈성형</h3></div>
-    </div>
-    <div class="vis-slide">
-      <img src="images/corridor-reception.jpg" alt="하니성형외과 리셉션">
+      <img src="images/corridor-reception.jpg" alt="하니성형외과 로비 리셉션">
       <div class="vis-copy"><em>Gangnam, Seoul</em><h3>상담부터 회복까지,<br>대표원장이 직접 함께합니다</h3></div>
     </div>
-    <div class="vis-ctrl">
-      <button class="vis-prev" aria-label="이전 슬라이드">‹</button>
-      <span class="vis-count">1 / 3</span>
-      <button class="vis-next" aria-label="다음 슬라이드">›</button>
-      <div class="vis-bar"><i></i></div>
+    <div class="vis-slide">
+      <img src="images/facility-lounge.jpg" alt="하니성형외과 라운지">
+      <div class="vis-copy"><em>Eye Specialist</em><h3>눈성형·눈재수술에<br>집중하는 하니</h3></div>
     </div>
   </div>
 </section>
@@ -404,18 +408,18 @@ footer .f-copy{color:#8d8d8d;padding-top:24px}
 <section class="sec-sig" id="sig">
   <div class="tt">
     <em>하니가 집중하는 눈성형</em>
-    <h2><span>HANI <b>Signature</b></span></h2>
+    <h2><span>OUR <b>Procedures</b></span></h2>
   </div>
   <div class="sig-tabs">
     <button class="sig-tab act" data-i="0"><img src="images/card-ptosis.jpg" alt="">눈매교정</button>
-    <button class="sig-tab" data-i="1"><img src="images/hero-mo.jpg" alt="">눈재수술</button>
+    <button class="sig-tab" data-i="1"><img src="images/card-revision.jpg" alt="">눈재수술</button>
     <button class="sig-tab" data-i="2"><img src="images/card-teuim.jpg" alt="">트임성형</button>
     <button class="sig-tab" data-i="3"><img src="images/card-middle.jpg" alt="">중년눈성형</button>
     <button class="sig-tab" data-i="4"><img src="images/card-undereye.jpg" alt="">눈밑성형</button>
   </div>
   <div class="sig-band">
     <div class="sig-card">
-      <div class="pic"><img id="sigPic" src="images/card-ptosis.jpg" alt="시그니처 시술 이미지" style="object-position:45% 30%"></div>
+      <div class="pic"><img id="sigPic" src="images/card-ptosis.jpg" alt="눈매교정 시술 부위 클로즈업" style="object-position:45% 22%;transform-origin:45% 22%"></div>
       <div class="sig-txt">
         <span class="num" id="sigNum">01</span>
         <h3 id="sigTitle">눈매교정</h3>
@@ -426,29 +430,7 @@ footer .f-copy{color:#8d8d8d;padding-top:24px}
       <p>궁금한 시술이 있다면 대표원장 상담에서 자세히 안내드립니다.</p>
       <a class="pill pill-white" href="#contact">상담 예약하기</a>
     </div>
-  </div>
-</section>
-
-<!-- 2. Play: 와이드 배너 슬라이더 -->
-<section class="sec-play" id="play">
-  <div class="tt">
-    <em>하니의 시술을 한눈에</em>
-    <h2><span>HANI <b>Play</b></span></h2>
-  </div>
-  <div class="play-rail-wrap">
-    <div class="rail" id="playRail">
-      <div class="play-item"><img src="images/sv-eye-1.jpg" alt="원데이 눈성형 배너"><span>원데이 눈성형</span></div>
-      <div class="play-item"><img src="images/sv-eye-2.jpg" alt="자연유착 배너"><span>자연유착</span></div>
-      <div class="play-item"><img src="images/sv-eye-3.jpg" alt="부분절개 배너"><span>부분절개</span></div>
-      <div class="play-item"><img src="images/sv-eye-4.jpg" alt="눈매교정 배너"><span>눈매교정</span></div>
-      <div class="play-item"><img src="images/sv-eye-5.jpg" alt="트임성형 배너"><span>트임성형</span></div>
-      <div class="play-item"><img src="images/sv-eye-6.jpg" alt="눈밑성형 배너"><span>눈밑성형</span></div>
-    </div>
-    <div class="rail-ctrl"><button data-rail="playRail" data-dir="-1" aria-label="이전">‹</button><button data-rail="playRail" data-dir="1" aria-label="다음">›</button></div>
-  </div>
-  <div class="play-foot">
-    <p>모든 시술은 상담 후 개인의 눈 상태에 맞춰 계획됩니다.</p>
-    <a class="pill pill-white" href="#contact">시술 상담하기</a>
+    <p class="sig-note">※ 모든 수술은 개인에 따라 결과가 다를 수 있으며, 부기·멍·감각 이상 등 부작용이 발생할 수 있습니다. 시술 전 전문의 상담이 필요합니다.</p>
   </div>
 </section>
 
@@ -479,18 +461,30 @@ footer .f-copy{color:#8d8d8d;padding-top:24px}
       <em>하니성형외과 유튜브</em>
       <h2><span>HANI <b>On Air</b></span></h2>
     </div>
+    <!-- 실제 채널(@doctorihuni) 영상 4편 — 썸네일은 유튜브 CDN, 클릭 시 새 탭 재생 -->
     <div class="onair-grid">
-      <a class="onair-card aos" href="https://www.youtube.com/@doctorihuni" target="_blank" rel="noopener">
-        <img src="images/square-doctor.jpg" alt="하니성형외과 유튜브 채널">
+      <a class="onair-card aos" href="https://www.youtube.com/watch?v=W8upS8MM7mg" target="_blank" rel="noopener">
+        <img src="https://i.ytimg.com/vi/W8upS8MM7mg/hqdefault.jpg" alt="세대별 눈성형 추구미 차이 영상" loading="lazy">
         <span class="play">▶</span>
-        <span class="label">최정훈 대표원장의 눈성형 이야기</span>
+        <span class="label">"세대별 추구미?" 요즘 뜨는 눈성형 추구미 차이</span>
       </a>
-      <a class="onair-card aos" href="https://www.youtube.com/@doctorihuni" target="_blank" rel="noopener">
-        <img src="images/square-natural.jpg" alt="하니성형외과 유튜브 영상">
+      <a class="onair-card aos" href="https://www.youtube.com/watch?v=WnMcsskgoNo" target="_blank" rel="noopener">
+        <img src="https://i.ytimg.com/vi/WnMcsskgoNo/hqdefault.jpg" alt="라인보강 눈매 설명 영상" loading="lazy">
         <span class="play">▶</span>
-        <span class="label">하니성형외과 채널 보러가기</span>
+        <span class="label">비절개로 라인이 또렷해지고 싶다면? 라인보강 눈매</span>
+      </a>
+      <a class="onair-card aos" href="https://www.youtube.com/watch?v=DbtsBXzwSXI" target="_blank" rel="noopener">
+        <img src="https://i.ytimg.com/vi/DbtsBXzwSXI/hqdefault.jpg" alt="하이브리드 절개 설명 영상" loading="lazy">
+        <span class="play">▶</span>
+        <span class="label">절개도 아니고 비절개도 아닌 하이브리드 절개란?</span>
+      </a>
+      <a class="onair-card aos" href="https://www.youtube.com/watch?v=fO-SJCMHYAg" target="_blank" rel="noopener">
+        <img src="https://i.ytimg.com/vi/fO-SJCMHYAg/hqdefault.jpg" alt="뒤밑트임 설명 영상" loading="lazy">
+        <span class="play">▶</span>
+        <span class="label">뒤밑트임 효과를 확실히 볼 수 있는 눈은?</span>
       </a>
     </div>
+    <p class="media-note">※ 영상 속 설명은 일반적인 정보입니다. 수술 방법과 회복 과정은 상태에 따라 다르고, 모든 수술에는 부작용이 따를 수 있어 진료 상담에서 개별적으로 확인해야 합니다.</p>
   </div>
 </section>
 
@@ -500,33 +494,20 @@ footer .f-copy{color:#8d8d8d;padding-top:24px}
     <em>짧게 보는 하니</em>
     <h2><span>HANI <b>Shorts</b></span></h2>
   </div>
+  <!-- 실제 쇼츠 6편. 썸네일은 유튜브 CDN hqdefault(16:9)를 9:16 카드에 cover 크롭 -->
   <div class="rail" id="shortsRail">
-    <a class="shorts-item" href="https://www.youtube.com/@doctorihuni" target="_blank" rel="noopener"><img src="images/card-ptosis.jpg" alt="눈매교정 쇼츠" style="object-position:45% 30%"><span>눈매교정</span></a>
-    <a class="shorts-item" href="https://www.youtube.com/@doctorihuni" target="_blank" rel="noopener"><img src="images/hero-mo.jpg" alt="눈재수술 쇼츠"><span>눈재수술</span></a>
-    <a class="shorts-item" href="https://www.youtube.com/@doctorihuni" target="_blank" rel="noopener"><img src="images/card-teuim.jpg" alt="트임성형 쇼츠"><span>트임성형</span></a>
-    <a class="shorts-item" href="https://www.youtube.com/@doctorihuni" target="_blank" rel="noopener"><img src="images/card-middle.jpg" alt="중년눈성형 쇼츠"><span>중년눈성형</span></a>
-    <a class="shorts-item" href="https://www.youtube.com/@doctorihuni" target="_blank" rel="noopener"><img src="images/card-undereye.jpg" alt="눈밑성형 쇼츠"><span>눈밑성형</span></a>
+    <a class="shorts-item" href="https://www.youtube.com/shorts/kcf-KKvCTWw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/kcf-KKvCTWw/hqdefault.jpg" alt="하니성형외과 리얼 후기 쇼츠" loading="lazy"><span>같은 사람, 다른 결과 — 리얼 후기</span></a>
+    <a class="shorts-item" href="https://www.youtube.com/shorts/zdfJ7oZFr7s" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/zdfJ7oZFr7s/hqdefault.jpg" alt="하니성형외과 리얼 후기 쇼츠 2" loading="lazy"><span>하니성형외과 리얼 후기 2</span></a>
+    <a class="shorts-item" href="https://www.youtube.com/shorts/CyJcLKF72Jk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/CyJcLKF72Jk/hqdefault.jpg" alt="눈매교정이 과하면 졸려보일까 쇼츠" loading="lazy"><span>눈매교정이 과해서 졸려보인다고?</span></a>
+    <a class="shorts-item" href="https://www.youtube.com/shorts/NJZrsgpF_do" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/NJZrsgpF_do/hqdefault.jpg" alt="절개쌍수 라인이 깊다면 쇼츠" loading="lazy"><span>절개쌍수 라인이 너무 깊다면?</span></a>
+    <a class="shorts-item" href="https://www.youtube.com/shorts/EZT5-VgOics" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/EZT5-VgOics/hqdefault.jpg" alt="뒤밑트임 후 흰자 노출 쇼츠" loading="lazy"><span>뒤밑트임 했는데 흰자가 많이 보인다면?</span></a>
+    <a class="shorts-item" href="https://www.youtube.com/shorts/T158NH6EqoU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/T158NH6EqoU/hqdefault.jpg" alt="얼굴분석 쇼츠" loading="lazy"><span>#얼굴분석 | 분석하니</span></a>
   </div>
   <div class="rail-ctrl"><button data-rail="shortsRail" data-dir="-1" aria-label="이전">‹</button><button data-rail="shortsRail" data-dir="1" aria-label="다음">›</button></div>
   <div class="shorts-foot">
-    <a class="pill pill-dark" href="https://www.youtube.com/@doctorihuni" target="_blank" rel="noopener">유튜브 채널 바로가기 ›</a>
+    <a class="pill pill-dark" href="https://www.youtube.com/@doctorihuni/shorts" target="_blank" rel="noopener">유튜브 쇼츠 더 보기 ›</a>
   </div>
-</section>
-
-<!-- 6. 그린 풀블리드 배너 -->
-<section class="bg-green sec-greenband">
-  <div class="tt wht">
-    <em>하니의 시그니처 라인업</em>
-    <h2><span>FOCUS ON <b>Eye</b></span></h2>
-  </div>
-  <div class="rail" id="gbRail" style="padding-left:24px;padding-right:24px">
-    <div class="gb-item"><img src="images/sv-eye-4.jpg" alt="눈매교정 배너"><span>눈매교정</span></div>
-    <div class="gb-item"><img src="images/sv-eye-2.jpg" alt="자연유착 배너"><span>자연유착</span></div>
-    <div class="gb-item"><img src="images/sv-eye-6.jpg" alt="눈밑성형 배너"><span>눈밑성형</span></div>
-    <div class="gb-item"><img src="images/sv-eye-3.jpg" alt="부분절개 배너"><span>부분절개</span></div>
-    <div class="gb-item"><img src="images/sv-eye-5.jpg" alt="트임성형 배너"><span>트임성형</span></div>
-  </div>
-  <div class="rail-ctrl wht"><button data-rail="gbRail" data-dir="-1" aria-label="이전">‹</button><button data-rail="gbRail" data-dir="1" aria-label="다음">›</button></div>
+  <p class="media-note">※ 영상 속 설명은 일반적인 정보입니다. 수술 방법과 회복 과정은 상태에 따라 다르고, 모든 수술에는 부작용이 따를 수 있어 진료 상담에서 개별적으로 확인해야 합니다.</p>
 </section>
 
 <!-- 7. Event -->
@@ -573,7 +554,17 @@ footer .f-copy{color:#8d8d8d;padding-top:24px}
       <div class="prog-item"><img src="images/consult-room.jpg" alt="상담실"><div class="cap"><em>Program 04</em><h3>맞춤 수술 계획</h3></div></div>
       <div class="prog-item"><img src="images/facility-recovery.jpg" alt="회복실"><div class="cap"><em>Program 05</em><h3>경과 관리</h3></div></div>
     </div>
-    <div class="equip aos">
+  </div>
+</section>
+
+<!-- 8-1. 보유 장비 -->
+<section class="bg-gray" id="equip" style="padding-top:0">
+  <div class="wrap">
+    <div class="tt">
+      <em>하니가 갖춘 장비</em>
+      <h2><span>OUR <b>Equipment</b></span></h2>
+    </div>
+    <div class="equip aos" style="padding-top:0">
       <div class="equip-item"><img src="images/equip-ulthera.jpg" alt="울쎄라피 프라임 장비"><p>울쎄라피 프라임</p></div>
       <div class="equip-item"><img src="images/equip-thermage.jpg" alt="써마지 FLX 장비"><p>써마지 FLX</p></div>
       <div class="equip-item"><img src="images/equip-sofwave.jpg" alt="소프웨이브 장비"><p>소프웨이브</p></div>
@@ -596,14 +587,133 @@ footer .f-copy{color:#8d8d8d;padding-top:24px}
       <div class="doctor-txt aos">
         <em>Director</em>
         <p class="name">최정훈 대표원장</p>
-        <p class="role">성형외과 전문의</p>
+        <p class="role">성형외과 전문의 · 눈성형 Specialist</p>
         <p class="quote">"얼굴에서 가장 맘에 드는 곳을 꼽으라면 주저없이 눈을 선택할 수 있도록, 트렌디한 눈수술법을 연구하고 개발해온 노하우를 눈성형에 담습니다."</p>
+        <!-- 이력: 병원 제공 프로필 카드(01_병원소개/doctor-profile) 원문 그대로 -->
         <ul>
-          <li>눈성형·눈재수술에 집중하는 진료</li>
-          <li>상담부터 수술, 경과 관리까지 대표원장 직접 진행</li>
-          <li>개인의 눈 상태에 맞춘 1:1 맞춤 수술 계획</li>
+          <li>상계백병원 성형외과 전문의</li>
+          <li>상계백병원 성형외과 임상외래교수</li>
+          <li>(현) 하니성형외과 대표원장</li>
+          <li>(전) 원진성형외과 원장 · (전) DA성형외과 원장</li>
+          <li>대한 성형외과의사회 · 대한 성형외과학회 정회원</li>
+          <li>대한 미용성형외과학회 · 대한 눈성형연구회 · 대한 코성형연구회 정회원</li>
+          <li>대한 두개안면성형외과학회 회원 · 국제 미용성형외과학회(IPRAS) 정회원</li>
+          <li>University of Texas MD Anderson Cancer Center, Houston, TX 연수</li>
         </ul>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 12. 진료실 Q&A — 기준 사이트(하니 리뉴얼안) 원문 20문 -->
+<section id="qa">
+  <div class="wrap">
+    <div class="tt">
+      <em>진료실에서 자주 나오는 질문</em>
+      <h2><span>CONSULT <b>Q&amp;A</b></span></h2>
+    </div>
+  </div>
+  <div class="rail qa-rail" id="qaRail">
+    <div class="qa-card"><span class="q">Q.</span><h3>"눈이 자꾸 풀려요"</h3><p>라인이 풀리는 데에는 눈꺼풀 두께와 지방량이 관여합니다. 피부가 얇으면 다시 매몰이 가능하고, 두껍거나 라인 디자인을 바꾸고 싶으시면 절개를 권해 드립니다.</p><em>하니 상담실</em></div>
+    <div class="qa-card"><span class="q">Q.</span><h3>"졸려 보인다는 말을 자주 들어요"</h3><p>눈 뜨는 힘부터 봅니다. 눈썹을 누른 상태에서 보이는 동공이 70%를 넘지 않으면 눈매교정을 함께 검토합니다. 힘이 좋아지면 홍채가 더 보여 눈이 커 보입니다.</p><em>하니 상담실</em></div>
+    <div class="qa-card"><span class="q">Q.</span><h3>"매몰이랑 자연유착이랑 다른 건가요?"</h3><p>같은 수술입니다. 자연유착, 매몰, 비절개 쌍꺼풀, 찝기는 병원마다 부르는 이름만 다를 뿐 실로 라인을 고정하는 같은 방식입니다.</p><em>하니 진료실</em></div>
+    <div class="qa-card"><span class="q">Q.</span><h3>"쌍꺼풀은 얼마나 크게 만들 수 있나요?"</h3><p>흰자에서 흰자까지가 수술이 가능한 범위입니다. 라인을 높게 잡는 것도 가능하지만 눈과 눈썹 사이 간격에 따라 한계가 있습니다.</p><em>하니 진료실</em></div>
+    <div class="qa-card"><span class="q">Q.</span><h3>"짝짝이가 될 수도 있나요?"</h3><p>안와뼈 구조상 완전한 대칭은 어렵습니다. 수술 직후에는 붓기가 양쪽 다르게 빠져 더 달라 보이고, 6개월에서 1년이 지난 뒤에도 남으면 재수술을 검토합니다.</p><em>하니 진료실</em></div>
+    <div class="qa-card"><span class="q">Q.</span><h3>"수술은 몇 시간 걸리나요?"</h3><p>마취와 소독, 집도를 포함해 약 1시간에서 1시간 30분입니다. 수술 범위와 조합에 따라 달라지고, 끝나면 회복실에서 충분히 쉬신 뒤 당일 퇴원하십니다.</p><em>하니 상담실</em></div>
+    <div class="qa-card"><span class="q">Q.</span><h3>"마취는 누가 하나요?"</h3><p>부분마취와 반수면 수면마취를 함께 쓰고, 대표원장이 직접 진행합니다. 수술 중에 눈을 떴다 감았다 하며 라인의 높이와 대칭을 확인해야 해서 부분마취가 기본입니다.</p><em>하니 상담실</em></div>
+    <div class="qa-card"><span class="q">Q.</span><h3>"혼자 가도 되나요?"</h3><p>혼자 오셔도 됩니다. 다만 수면마취를 하기 때문에 수술 당일 자가운전은 어렵습니다. 차를 가지고 오시는 경우에는 보호자가 필요합니다.</p><em>하니 상담실</em></div>
+    <div class="qa-card"><span class="q">Q.</span><h3>"출근은 언제부터 하나요?"</h3><p>회복 속도는 사람마다 달라 복귀 시점을 일률적으로 안내드리지 않습니다. 실밥은 7~10일차에 제거하고, 누가 봐도 수술한 것 같은 큰 붓기는 1~2주, 잔붓기는 3~4주 정도 남습니다. 멍은 1~2주면 가라앉습니다.</p><em>하니 진료실</em></div>
+    <div class="qa-card"><span class="q">Q.</span><h3>"화장이랑 렌즈는 언제부터요?"</h3><p>둘 다 수술 후 2주 뒤부터 가능합니다. 그 전까지는 눈을 조심해서 세안해 주시고, 수술 부위에 물이 닿지 않게 해 주세요.</p><em>하니 진료실</em></div>
+    <div class="qa-card"><span class="q">Q.</span><h3>"운동이랑 술은 언제부터인가요?"</h3><p>가벼운 산책은 바로 하셔도 됩니다. 얼굴에 압이 많이 들어가는 격한 운동과 음주·흡연은 염증과 흉터 착색 때문에 한 달 뒤부터 권합니다.</p><em>하니 상담실</em></div>
+    <div class="qa-card"><span class="q">Q.</span><h3>"실밥은 언제 뽑나요?"</h3><p>수술 후 7~10일차에 제거합니다. 실밥을 뽑은 뒤에도 붓기가 빠지면서 일부 실이 튀어나오는 경우가 있는데, 방문하시면 제거해 드립니다.</p><em>하니 상담실</em></div>
+    <div class="qa-card"><span class="q">Q.</span><h3>"절개하면 흉터가 많이 남나요?"</h3><p>흉터는 개인 살성에 따라 다르고 완전히 없어지지는 않습니다. 평균적으로 6~12개월이 지나면 눈을 떴을 때는 거의 보이지 않지만, 감았을 때는 주름처럼 남을 수 있습니다.</p><em>하니 상담실</em></div>
+    <div class="qa-card"><span class="q">Q.</span><h3>"부작용은 어떤 게 있나요?"</h3><p>시림, 건조, 당김, 이물감, 눈부심, 두통이 나타날 수 있습니다. 대개 1~2개월 안에 좋아지고 인공눈물로 완화됩니다. 다만 열감과 통증, 붉은기가 점점 심해지면 염증 가능성이 있어 바로 내원하셔야 합니다.</p><em>하니 진료실</em></div>
+    <div class="qa-card"><span class="q">Q.</span><h3>"써클트임 하면 웃을 때 티가 나나요?"</h3><p>하니의 써클트임은 근막에 고정하는 방식이라 눈웃음도 자연스럽게 지으실 수 있습니다. 다만 단계가 높아지면 눈웃음이 불편할 수 있어, 2단계 정도까지가 웃을 때 가장 자연스럽습니다.</p><em>하니 진료실</em></div>
+    <div class="qa-card"><span class="q">Q.</span><h3>"트임한 걸 되돌릴 수 있나요?"</h3><p>트임 복원은 비율로 줄입니다. 자연스럽게 10~30% 줄이는 경우가 대부분이고, 50% 이상 줄이면 눈이 답답해질 수 있다는 점을 미리 말씀드립니다.</p><em>하니 진료실</em></div>
+    <div class="qa-card"><span class="q">Q.</span><h3>"남자도 티 안 나게 되나요?"</h3><p>남자 눈성형의 기준은 눈 뜨는 힘입니다. 라인 자체는 얇게 속쌍으로 하는 경우가 많고, 눈을 떴을 때 라인이 거의 안 보이는 무쌍 눈매교정과 끝부분부터 살짝 보이는 속쌍 아이돌라인으로 나뉩니다.</p><em>하니 진료실</em></div>
+    <div class="qa-card"><span class="q">Q.</span><h3>"눈이 무거워서 이마로 뜹니다"</h3><p>눈썹과 눈 사이가 넓고 눈썹 쪽 피부가 처졌다면 눈썹하거상을, 사이가 좁아 라인이 잘 안 보이고 이마 주름이 심하며 눈 뜨는 힘이 부족하다면 내시경 이마거상을 검토합니다.</p><em>하니 진료실</em></div>
+    <div class="qa-card"><span class="q">Q.</span><h3>"눈밑이 불룩한데 하안검인가요?"</h3><p>눈밑지방재배치는 불룩한 지방을 꺼진 곳으로 옮겨 평평하게 만드는 수술이고, 하안검은 거기에 늘어진 피부 정리와 탄력 유지를 위한 외안각고정을 더한 수술입니다.</p><em>하니 진료실</em></div>
+    <div class="qa-card"><span class="q">Q.</span><h3>"지방이식은 어디서 빼나요?"</h3><p>복부 또는 허벅지에서 채취합니다. 눈위 미세지방이식은 7일 정도 흰색 테이핑을 유지하고, 테이프를 뗀 뒤에는 일상생활이 가능한 정도의 붓기입니다.</p><em>하니 진료실</em></div>
+  </div>
+  <div class="rail-ctrl"><button data-rail="qaRail" data-dir="-1" aria-label="이전">‹</button><button data-rail="qaRail" data-dir="1" aria-label="다음">›</button></div>
+</section>
+
+<!-- 13. 수술 후 회복 안내 — 기준 사이트 원문 12장 (전후 사진 없음, 텍스트 카드) -->
+<section class="bg-gray" id="recovery">
+  <div class="wrap">
+    <div class="tt">
+      <em>수술 후 회복은 어떻게 진행되나요</em>
+      <h2><span>HANI <b>Recovery</b></span></h2>
+    </div>
+  </div>
+  <div class="rail rec-rail" id="recRail">
+    <div class="rec-card"><h3>하이브리드 절개(재)+라인보강 2개월차</h3><p>재수술은 첫 수술보다 붓기와 멍이 더 오래갈 수 있습니다</p></div>
+    <div class="rec-card"><h3>절개+라인보강 2개월차</h3><p>실밥은 7~10일차에 제거하고 그 뒤부터 세안이 편해집니다</p></div>
+    <div class="rec-card"><h3>써클트임 2개월차</h3><p>트임은 눈 끝쪽 소량 절개로 진행합니다 흉터는 개인 살성에 따라 다릅니다</p></div>
+    <div class="rec-card"><h3>매몰+라인보강+써클트임 3개월차</h3><p>잔붓기는 3~4주까지 남습니다 최종 모양은 6개월 이후에</p></div>
+    <div class="rec-card"><h3>매몰+라인보강+윗트임 1개월차</h3><p>붓기가 빠지면서 라인은 조금씩 낮아 보입니다</p></div>
+    <div class="rec-card"><h3>하이브리드절개(재)+라인보강+눈위지방이식 1개월차</h3><p>눈위 지방이식은 7일 동안 흰색 테이핑을 유지합니다</p></div>
+    <div class="rec-card"><h3>절개(재)+라인보강+눈위지방이식+눈밑지방재배치 2개월차</h3><p>눈위 지방이식은 7일 동안 흰색 테이핑을 유지합니다</p></div>
+    <div class="rec-card"><h3>매몰+라인보강+눈위지방이식 1개월차</h3><p>눈위 지방이식은 7일 동안 흰색 테이핑을 유지합니다</p></div>
+    <div class="rec-card"><h3>절개(재)+라인보강+써클트임 3개월차</h3><p>라인 보강은 기존 라인의 높이와 두께를 다시 잡는 과정입니다</p></div>
+    <div class="rec-card"><h3>매몰(재)+라인보강+눈위지방이식+써클트임(재) 1개월차</h3><p>여러 수술을 함께 한 경우 회복 속도가 부위마다 다릅니다</p></div>
+    <div class="rec-card"><h3>써클트임 6개월차</h3><p>고정실이 느슨해지면 다시 붙을 수 있어 경과 진료에서 함께 봅니다</p></div>
+    <div class="rec-card"><h3>매몰+라인보강 2개월차</h3><p>경과는 눈 구조와 살성에 따라 사람마다 차이가 큽니다</p></div>
+  </div>
+  <div class="rail-ctrl"><button data-rail="recRail" data-dir="-1" aria-label="이전">‹</button><button data-rail="recRail" data-dir="1" aria-label="다음">›</button></div>
+  <p class="media-note">※ 회복 경과는 눈 구조와 살성에 따라 개인차가 크며, 모든 수술에는 부작용이 따를 수 있습니다.</p>
+</section>
+
+<!-- 14. FAQ — 기본 8문 + 더보기 30문, 기준 사이트 원문 -->
+<section id="faq">
+  <div class="wrap">
+    <div class="tt">
+      <em>자주 묻는 질문</em>
+      <h2><span>HANI <b>FAQ</b></span></h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item"><summary>하니성형외과는 어떤 병원인가요?</summary><p>강남역 10번 출구 250m에 있는, 눈성형과 눈재수술을 중점으로 진료하는 성형외과입니다. 쌍꺼풀(자연유착·부분절개·절개)·눈매교정·트임성형·눈밑성형·눈재수술·트임 복원을 한 축으로 봅니다. 중년 눈성형과 남자 눈성형도 함께 진료합니다. 주소는 서울특별시 서초구 강남대로65길 1, 지오다노 건물 9층입니다.</p></details>
+      <details class="faq-item"><summary>상담과 수술은 누가 하나요?</summary><p>상담·치료·수술·경과 진료를 최정훈 대표원장이 1:1 대면으로 맡습니다. 수술 방향을 정하는 디자인과 마취까지 같은 사람이 이어서 진행합니다. 중간에 담당이 바뀌지 않아, 수술 전에 나눈 이야기가 경과 진료까지 그대로 이어집니다. 피부 시술은 담당 원장이 따로 봅니다.</p></details>
+      <details class="faq-item"><summary>최정훈 대표원장은 어떤 이력을 가지고 있나요?</summary><p>성형외과 전문의이며, 상계백병원 성형외과 전문의와 임상외래교수를 지냈습니다. 이후 원진성형외과·DA성형외과 원장을 거쳐 하니성형외과 대표원장으로 진료하고 있습니다. University of Texas MD Anderson Cancer Center(휴스턴)에서 연수했습니다. 대한성형외과의사회·대한성형외과학회·대한미용성형외과학회·대한눈성형연구회·대한코성형연구회·대한두개안면성형외과학회·국제미용성형외과학회(IPRAS) 회원입니다.</p></details>
+      <details class="faq-item"><summary>진료 시간이 어떻게 되나요?</summary><p>평일(월~금) 10:00~19:00, 토요일 10:00~16:00에 진료하고 일요일과 공휴일은 휴진입니다. 상담과 수술 모두 예약제로 운영합니다. 예약은 대표전화 02-532-8001 또는 카카오톡 채널로 하실 수 있습니다.</p></details>
+      <details class="faq-item"><summary>강남역에서 어떻게 찾아가나요?</summary><p>강남역 10번 출구에서 도보 약 3분, 250m 거리의 지오다노 건물 9층입니다. 주소는 서울특별시 서초구 강남대로65길 1입니다. 9층 전체를 병원으로 씁니다. 인근 표지로는 CGV와 삼성전자 서초사옥이 있습니다.</p></details>
+      <details class="faq-item"><summary>주차가 되나요?</summary><p>건물 주차장을 이용하실 수 있고, 방문 목적에 따라 지원 시간이 다릅니다. 수술 당일 3시간, 치료 당일 1시간, 상담 당일에 수술을 예약하시면 1시간이 지원됩니다. 단순 상담만 하시는 경우에는 주차 지원이 되지 않습니다. 지원 시간을 넘기면 10분당 1,000원이 부과되고, 만차일 때는 인근 경동유료주차장을 이용하시면 됩니다(이 경우 지원은 되지 않습니다).</p></details>
+      <details class="faq-item"><summary>눈 수술은 시간이 얼마나 걸리나요?</summary><p>눈 수술은 마취와 소독, 집도를 포함해 약 1시간에서 1시간 30분 정도 걸립니다. 수술이 끝나면 회복실에서 충분히 쉬신 뒤 당일 퇴원하십니다. 수술 범위와 조합에 따라 시간은 달라질 수 있습니다.</p></details>
+      <details class="faq-item"><summary>마취는 어떻게 하나요?</summary><p>눈 수술 마취는 부분마취와 반수면 수면마취를 함께 쓰며, 대표원장이 직접 진행합니다. 눈 수술은 중간에 눈을 떴다 감았다 하면서 라인의 깊이와 높이를 확인하고, 대칭을 보기 위해 앉아 보아야 하기 때문에 부분마취가 기본입니다. 수면마취를 하는 경우 수술 전 6시간 금식이 필요합니다.</p></details>
+      <details class="faq-more">
+        <summary>질문 30개 더 보기 ↓</summary>
+      <details class="faq-item"><summary>혼자 가도 되나요? 보호자가 꼭 있어야 하나요?</summary><p>혼자 오셔도 되고 보호자가 반드시 계셔야 하는 것은 아니지만, 차를 가지고 오시는 경우에는 보호자가 필요합니다. 수면마취를 하기 때문에 수술 당일 자가운전은 어렵습니다. 수술 뒤에는 회복실에서 충분히 쉬신 뒤 당일 퇴원하십니다.</p></details>
+      <details class="faq-item"><summary>붓기와 멍은 얼마나 가나요?</summary><p>누가 봐도 수술한 것 같은 큰 붓기는 1~2주, 잔붓기는 3~4주 정도 남습니다. 멍은 보통 1~2주면 가라앉습니다. 붓기가 완전히 빠지는 데에는 6~12개월이 걸리고, 회복 속도는 눈꺼풀 두께·지방량·수술 방법에 따라 개인차가 큽니다. 수술 후 3~4일은 오히려 더 부었다가 가라앉습니다.</p></details>
+      <details class="faq-item"><summary>실밥은 언제 제거하나요?</summary><p>실밥은 수술 후 7~10일차 사이에 제거하고, 그 자리에서 경과도 함께 확인합니다. 실밥을 뽑은 뒤에도 붓기가 빠지면서 일부 실이 튀어나오는 경우가 있는데, 방문하시면 제거해 드립니다. 실밥 제거 전까지는 눈을 조심해서 세안해 주세요.</p></details>
+      <details class="faq-item"><summary>출근과 화장, 렌즈는 언제부터 가능한가요?</summary><p>회복 속도는 사람마다 달라 복귀 시점을 일률적으로 안내드리지 않습니다. 실밥은 7~10일차에 제거하고, 누가 봐도 수술한 것 같은 큰 붓기는 1~2주 정도 남습니다. 화장과 렌즈는 수술 후 2주 뒤부터 가능합니다. 세수는 최소 1주일간 눈을 조심해서 해 주시고, 샤워는 다음 날부터 하시되 수술 부위에 물이 닿지 않도록 해 주세요. 잘 때는 수술 부위를 심장보다 높게 두는 편이 붓기에 좋습니다.</p></details>
+      <details class="faq-item"><summary>운동과 음주·흡연은 언제부터 되나요?</summary><p>가벼운 산책은 바로 하셔도 되고, 격한 운동과 음주·흡연은 한 달 뒤부터 권합니다. 얼굴에 압이 많이 들어가는 운동은 붓기와 출혈에 영향을 줍니다. 술과 담배는 염증과 흉터 착색 가능성 때문에 같은 기준을 둡니다. 냉찜질은 3~7일 하고 그 뒤에는 온찜질로 바꾸는데, 지방이식을 함께 했다면 온찜질은 하지 않습니다.</p></details>
+      <details class="faq-item"><summary>최종 모양은 언제 나오나요?</summary><p>6개월 이상 지나야 최종 모양을 확인할 수 있고, 재수술은 이보다 더 걸릴 수 있습니다. 수술 직후에는 붓기 때문에 라인이 높거나 낮아 보이고 좌우가 달라 보일 수 있습니다. 6개월에서 1년이 지난 뒤에도 라인이 마음에 걸리면 그때 재수술을 검토합니다.</p></details>
+      <details class="faq-item"><summary>자연유착과 매몰, 비절개는 다른 수술인가요?</summary><p>자연유착·매몰·비절개 쌍꺼풀·찝기는 모두 같은 수술이고 병원마다 부르는 이름만 다릅니다. 실로 라인을 고정하는 같은 방식을 가리키는 말입니다. 이름이 다르다고 해서 결과가 다른 수술이 되는 것은 아닙니다.</p></details>
+      <details class="faq-item"><summary>비절개와 절개는 무엇을 보고 정하나요?</summary><p>눈꺼풀 피부 두께와 지방량, 그리고 원하는 라인 디자인을 보고 정합니다. 피부가 두껍거나 지방이 많으면 비절개보다 부분절개나 절개를 권합니다. 라인 처짐이 심해 원하는 디자인이 나오지 않을 때도 피부를 절제해야 해서 절개를 권합니다. 쌍꺼풀을 만들 수 있는 범위는 흰자에서 흰자까지입니다.</p></details>
+      <details class="faq-item"><summary>눈매교정은 언제 같이 하나요?</summary><p>눈 뜨는 힘이 약할 때, 눈썹을 누른 상태에서 보이는 동공이 70% 이하이면 함께 검토합니다. 눈 뜨는 힘이 좋아지면 홍채가 더 드러나 눈이 커 보이고, 이마로 눈을 뜨는 습관도 이전보다 나아집니다. 반대로 눈 뜨는 힘이 좋고 눈과 눈썹 사이가 좁아 인상이 부리부리해질 수 있는 분, 라인을 크게 원하시는 분에게는 굳이 권하지 않습니다.</p></details>
+      <details class="faq-item"><summary>세미아웃이 무엇인가요?</summary><p>세미아웃은 앞라인의 시작점을 빨간 누호까지 뻗도록 잡는 디자인 방법입니다. 절개든 비절개든 상관없이 적용할 수 있습니다. 수술 방식의 이름이 아니라 라인을 어디서 시작할지에 대한 디자인 용어입니다.</p></details>
+      <details class="faq-item"><summary>짝짝이가 될 가능성이 있나요?</summary><p>가능성은 있습니다 — 안와뼈 구조상 완전한 대칭은 어렵다는 점을 수술 전에 먼저 말씀드립니다. 수술 직후에는 양쪽이 다르게 붓고 다르게 빠지기 때문에 더 달라 보이고, 붓기가 빠지면 대칭이 맞아 갑니다. 6개월에서 1년이 지난 뒤에도 차이가 남아 있으면 재수술을 검토합니다.</p></details>
+      <details class="faq-item"><summary>눈재수술은 어떤 종류가 있나요?</summary><p>피부처짐·풀린눈·소시지눈·겹쌍꺼풀·꺼진눈·흉터개선·눈매비대칭 일곱 갈래로 나눕니다. 여기에 트임 복원(앞트임 복원·뒷트임 복원)과 지방내리기가 더해집니다. 어떤 갈래인지에 따라 다시 매몰로 갈지 절개로 갈지가 달라집니다.</p></details>
+      <details class="faq-item"><summary>소시지눈이 무엇인가요?</summary><p>라인 디자인이 두껍거나 라인을 고정하는 실이 강해서 라인이 불룩해 보이는 현상을 말합니다. 눈을 떴을 때 쌍꺼풀 부분이 도톰하게 튀어나와 보이는 상태입니다. 라인 두께와 고정 강도를 다시 잡는 재수술로 다룹니다.</p></details>
+      <details class="faq-item"><summary>다시 매몰과 다시 절개는 무엇으로 가르나요?</summary><p>눈꺼풀 피부 두께와, 라인 디자인 자체를 바꾸고 싶은지 아닌지로 가릅니다. 피부가 얇은 경우에는 매몰이 또 가능합니다. 피부가 두껍거나 라인 디자인을 바꾸고 싶을 때는 절개를 권합니다. 절개 재수술은 피부 여분이 남아 있을 때 가능합니다.</p></details>
+      <details class="faq-item"><summary>재수술을 권하지 않거나 미루는 경우도 있나요?</summary><p>있습니다 — 흉터 상태와 피부 여분, 지금 라인을 보고 세 가지 경우에는 권하지 않거나 미룹니다. 흉터가 아직 아물지 않은 시기(6개월 이전), 피부 여분이 없는 경우, 그리고 지금 라인 모양에 문제가 없는데 더 큰 라인을 원해서 오히려 소시지눈이 될 가능성이 있는 경우입니다. 마지막은 수술을 해도 지금보다 예뻐지지 않을 수 있어 말씀드리고 미룹니다.</p></details>
+      <details class="faq-item"><summary>써클트임은 어떤 수술인가요?</summary><p>써클트임은 뒷트임과 밑트임을 함께 진행해 눈꼬리 쪽의 삼각존을 넓히는 수술입니다. 핵심은 근막에 고정하는 실의 위치와 개수, 강도를 조절해 다양한 모양을 만들 수 있다는 점입니다. 단계에 따라 1단계는 고양이상, 2단계는 얌전한 고양이상, 3단계는 강아지상, 4단계는 너구리상으로 표현합니다. 하니의 시그니처 트임입니다.</p></details>
+      <details class="faq-item"><summary>써클트임을 하면 눈웃음이 어색해지나요?</summary><p>하니의 써클트임은 근막에 고정하는 방식이라 눈웃음도 자연스럽게 지으실 수 있습니다. 다만 근막에 고정하더라도 단계가 높아지면 눈웃음이 불편할 수 있습니다. 웃을 때 가장 자연스러운 것은 2단계 정도까지입니다. 눈웃음이 많으신 분은 고정실이 느슨해지면서 다시 붙을 가능성도 있습니다.</p></details>
+      <details class="faq-item"><summary>트임 복원은 얼마나 되돌릴 수 있나요?</summary><p>트임 복원은 비율로 줄이며, 자연스럽게 10~30% 줄이는 경우가 대부분입니다. 50% 이상 줄이면 눈이 답답해질 수 있다는 점을 미리 말씀드립니다. 앞트임 복원과 뒷트임 복원을 각각 진행합니다.</p></details>
+      <details class="faq-item"><summary>남자 눈성형은 무엇을 기준으로 정하나요?</summary><p>남자 눈성형에서 먼저 보는 기준은 라인의 크기가 아니라 눈 뜨는 힘입니다. 라인 자체는 얇게 속쌍으로 하는 경우가 많지만 꼭 작게만 원하시는 것은 아니고 취향 차이입니다. 공통적으로는 눈이 무거워져 처짐과 이마 주름이 생겨 오십니다. 눈을 떴을 때 끝라인만 살짝 보이거나 아예 보이지 않는 무쌍 눈매교정, 검은 눈동자 끝부분부터 라인이 조금 더 보이는 속쌍 아이돌라인으로 나뉘고, 가로 길이를 키우는 트임이 있습니다.</p></details>
+      <details class="faq-item"><summary>남자 눈성형은 회복이 얼마나 걸리나요?</summary><p>비절개 눈매교정은 3일 정도면 일상생활이 가능하고, 일반적으로는 일주일로 안내합니다. 절개 눈매교정은 실밥을 뽑는 일주일째까지 조심하셔야 하고 그 이후에는 편하게 지내실 수 있습니다. 큰 붓기가 빠지는 모양적인 회복은 한 달 정도로 봅니다. 남자는 라인 크기가 작아 상대적으로 회복이 빠른 편입니다.</p></details>
+      <details class="faq-item"><summary>상안검·눈썹하거상·내시경 이마거상은 어떻게 다른가요?</summary><p>눈썹과 눈 사이의 거리, 그리고 이마 주름과 눈 뜨는 힘을 보고 가릅니다. 눈썹과 눈 사이 거리가 넓고 눈썹 쪽 피부가 처졌을 때는 눈썹하거상을 합니다. 거리가 좁아서 쌍꺼풀 라인이 잘 보이지 않거나 이마 주름이 심하고 눈 뜨는 힘이 부족한 분에게는 내시경 이마거상을 씁니다. 상안검은 처진 윗눈꺼풀 피부를 정리하는 수술입니다.</p></details>
+      <details class="faq-item"><summary>하안검과 눈밑지방재배치는 무엇이 다른가요?</summary><p>눈밑지방재배치는 불룩한 지방을 꺼진 곳으로 옮겨 평평하게 만드는 수술입니다. 하안검은 거기에 늘어진 피부 정리와 탄력 유지를 위한 외안각고정을 더한 수술입니다. 외안각고정은 나이가 들며 안쪽 근육과 지방까지 처질 때 녹지 않는 실을 외안각에 고정해 처짐을 막고 탄력을 유지하게 합니다.</p></details>
+      <details class="faq-item"><summary>눈위 미세지방이식은 어떤 수술인가요?</summary><p>눈위 미세지방이식은 복부나 허벅지에서 채취한 본인 지방을 꺼진 눈두덩이에 넣는 수술입니다. 필러는 이물반응이 일어날 가능성이 있는 반면, 지방이식은 본인 지방을 쓰기 때문에 그 점에서는 부담이 적습니다. 수술 후 7일 정도 눈 위에 흰색 테이핑을 유지하고, 테이프를 뗀 뒤에는 일상생활이 가능한 정도의 붓기입니다. 체중 감량이나 노화로 줄어들 수 있어 2차 이식을 하는 경우도 있습니다.</p></details>
+      <details class="faq-item"><summary>절개하면 흉터가 많이 남나요?</summary><p>흉터는 개인 살성에 따라 다르고 완전히 없어지지는 않는다고 미리 말씀드립니다. 평균적으로 6~12개월이 지나면 눈을 떴을 때는 거의 보이지 않지만, 눈을 감았을 때는 주름처럼 남아 있을 수 있습니다. 붉은 흉터는 보통 3~6개월 뒤부터 좋아집니다. 회복 과정에서 흉터가 딱딱해졌다가 다시 부드러워지는데, 많이 딱딱한 경우 흉터 주사로 관리해 드립니다.</p></details>
+      <details class="faq-item"><summary>부작용은 어떤 것이 있나요?</summary><p>눈 수술 후에는 시림, 건조, 당김, 이물감, 눈부심, 두통이 나타날 수 있습니다. 수술 자극으로 눈물이나 눈곱이 많아지는 것도 흔하고 대개 한 달 안에 좋아집니다. 눈이 뻑뻑한 증상은 보통 1~2개월 안에 나아지며 인공눈물로 완화됩니다. 다만 수술 부위의 열감·통증·붉은기가 점점 심해지거나 열이 나고 고름이 나오면 염증 가능성이 있으므로 지켜보지 마시고 바로 내원해 주세요.</p></details>
+      <details class="faq-item"><summary>수술 후 갑자기 많이 부었는데 괜찮은가요?</summary><p>수술 후 3~4일간은 오히려 더 붓다가 가라앉는 것이 일반적인 흐름입니다. 통증도 같은 흐름으로 3~4일 늘었다가 서서히 사라집니다. 다만 수술 부위에 열감과 통증, 붉은기가 점점 심해지는 경우에는 빠르게 내원해 주세요. 피가 멈추지 않고 계속 흐르듯 나거나 시야가 계속 흐려지는 경우에도 바로 연락 주셔야 합니다.</p></details>
+      <details class="faq-item"><summary>수술 전에 준비할 것이 있나요?</summary><p>수면마취를 하기 때문에 수술 전 6시간 금식이 필요하고, 임신 중에는 수술이 어렵습니다. 영양제와 한약은 최소 7일 전부터 중단하시는 편이 좋습니다. 네일아트는 지우고 오셔야 하며, 렌즈는 상담 때는 끼셔도 되지만 수술 중에는 반드시 제거합니다. 혈압약·당뇨약은 금식 시간에 맞춰 미리 복용하고 오시면 됩니다.</p></details>
+      <details class="faq-item"><summary>수술 후 관리 프로그램이 있나요?</summary><p>부기주사, 부기레이저, 흉터주사 등 수술 후 관리 프로그램이 준비되어 있습니다. 수술 전 심화 상담과 1차 디자인, 수술 당일 2차 디자인과 컨디션 체크, 수술 후 경과 진료까지 담당 주치의가 이어서 봅니다. 경과 상담 후 필요한 경우 개인에 맞춰 안내해 드립니다.</p></details>
+      <details class="faq-item"><summary>외국인도 진료를 받을 수 있나요?</summary><p>보건복지부 외국인환자 유치의료기관으로 등록된 병원이라 외국인 환자 진료가 가능합니다. 유치 진료과목은 성형외과입니다. 해외 환자용 안내는 haniplasticsurgery.com에서 보실 수 있습니다.</p></details>
+      <details class="faq-item"><summary>전후사진은 어떤 기준으로 공개하나요?</summary><p>시술 전과 후가 동일인이고, 시술 당사자에게 사전 동의를 받은 사진만 올립니다. 사진마다 어떤 수술을 했고 몇 개월차인지 경과 시점을 함께 적습니다. 결과는 눈 구조와 살성에 따라 개인차가 있고 부작용 가능성이 있다는 안내를 함께 둡니다. 본 사진의 저작권은 하니성형외과에 있습니다.</p></details>
+      </details>
     </div>
   </div>
 </section>
@@ -704,30 +814,32 @@ const io = new IntersectionObserver(es => es.forEach(e => {
 }), {threshold: 0.15});
 document.querySelectorAll('.aos, .tt, .anipic').forEach(el => io.observe(el));
 
-// 히어로 슬라이더
+// 히어로 슬라이더 — 컨트롤 없이 자동 전환, 손가락/마우스 가로 스와이프로만 넘김
 const slides = document.querySelectorAll('.vis-slide');
-const bar = document.querySelector('.vis-bar i');
-const count = document.querySelector('.vis-count');
 let cur = 0, timer;
 function go(i){
   slides[cur].classList.remove('act');
   cur = (i + slides.length) % slides.length;
   slides[cur].classList.add('act');
-  count.textContent = (cur+1) + ' / ' + slides.length;
-  bar.style.width = ((cur+1)/slides.length*100) + '%';
 }
 function auto(){ clearInterval(timer); timer = setInterval(() => go(cur+1), 4500); }
-document.querySelector('.vis-prev').addEventListener('click', () => { go(cur-1); auto(); });
-document.querySelector('.vis-next').addEventListener('click', () => { go(cur+1); auto(); });
+const slider = document.querySelector('.vis-slider');
+let swipeX = null;
+slider.addEventListener('pointerdown', e => { swipeX = e.clientX; });
+slider.addEventListener('pointerup', e => {
+  if (swipeX === null) return;
+  const dx = e.clientX - swipeX; swipeX = null;
+  if (Math.abs(dx) > 40) { go(cur + (dx < 0 ? 1 : -1)); auto(); }
+});
 go(0); auto();
 
 // 시그니처 탭
 const SIG = [
-  {t:'눈매교정', d:'처진 눈꺼풀을 올려 또렷한 눈매 라인을 만드는 수술입니다. 개인의 눈 상태에 맞춰 절개 범위와 방법을 계획합니다.', img:'images/card-ptosis.jpg', pos:'45% 30%'},
-  {t:'눈재수술', d:'이전 수술 상태를 확인한 뒤, 풀린 눈·겹쌍꺼풀·흉터 등 문제에 맞는 재수술 계획을 세웁니다.', img:'images/hero-mo.jpg', pos:'50% 25%'},
-  {t:'트임성형', d:'앞트임·뒷트임 등으로 원하는 눈의 느낌을 만드는 수술입니다. 과하지 않게, 원하는 인상 그대로 계획합니다.', img:'images/card-teuim.jpg', pos:'50% 35%'},
-  {t:'중년눈성형', d:'상안검·하안검 등 나이에 따른 눈 주변 변화를 개선하는 수술입니다. 우아하고 자연스러운 인상을 목표로 합니다.', img:'images/card-middle.jpg', pos:'50% 25%'},
-  {t:'눈밑성형', d:'눈밑 지방·다크서클 고민을 개선해 밝고 편안한 인상을 만드는 수술입니다.', img:'images/card-undereye.jpg', pos:'50% 30%'}
+  {t:'눈매교정', d:'처진 눈꺼풀을 올려 또렷한 눈매 라인을 만드는 수술입니다. 개인의 눈 상태에 맞춰 절개 범위와 방법을 계획합니다.', img:'images/card-ptosis.jpg', pos:'45% 22%'},
+  {t:'눈재수술', d:'이전 수술 상태를 확인한 뒤, 풀린 눈·겹쌍꺼풀·흉터 등 문제에 맞는 재수술 계획을 세웁니다.', img:'images/card-revision.jpg', pos:'50% 22%'},
+  {t:'트임성형', d:'앞트임·뒷트임 등으로 원하는 눈의 느낌을 만드는 수술입니다. 과하지 않게, 원하는 인상 그대로 계획합니다.', img:'images/card-teuim.jpg', pos:'50% 28%'},
+  {t:'중년눈성형', d:'상안검·하안검 등 나이에 따른 눈 주변 변화를 개선하는 수술입니다. 우아하고 자연스러운 인상을 목표로 합니다.', img:'images/card-middle.jpg', pos:'50% 20%'},
+  {t:'눈밑성형', d:'눈밑 지방·다크서클 고민을 개선해 밝고 편안한 인상을 만드는 수술입니다.', img:'images/card-undereye.jpg', pos:'50% 26%'}
 ];
 document.querySelectorAll('.sig-tab').forEach(tab => tab.addEventListener('click', () => {
   document.querySelectorAll('.sig-tab').forEach(t => t.classList.remove('act'));
@@ -735,7 +847,9 @@ document.querySelectorAll('.sig-tab').forEach(tab => tab.addEventListener('click
   const s = SIG[+tab.dataset.i];
   const pic = document.getElementById('sigPic');
   pic.src = s.img;
+  pic.alt = s.t + ' 시술 부위 클로즈업';
   pic.style.objectPosition = s.pos;
+  pic.style.transformOrigin = s.pos;
   document.getElementById('sigTitle').textContent = s.t;
   document.getElementById('sigDesc').textContent = s.d;
   document.getElementById('sigNum').textContent = String(+tab.dataset.i+1).padStart(2,'0');
