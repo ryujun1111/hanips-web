@@ -122,7 +122,7 @@ section{padding:120px 0;overflow:hidden;scroll-margin-top:130px}
 .sig-tab.act{color:var(--main);font-weight:600}
 .sig-tab.act img{box-shadow:0 0 0 3px var(--main),0 10px 26px rgba(0,92,62,.22);filter:none}
 .sig-tab:nth-child(1) img{object-position:45% 35%}
-.sig-tab:nth-child(2) img{object-position:50% 25%}
+.sig-tab:nth-child(2) img{object-position:76% 40%}
 .sig-tab:nth-child(3) img{object-position:50% 38%}
 .sig-tab:nth-child(4) img{object-position:50% 30%}
 .sig-tab:nth-child(5) img{object-position:50% 35%}
@@ -155,7 +155,7 @@ section{padding:120px 0;overflow:hidden;scroll-margin-top:130px}
 .onair-card img{width:100%;height:100%;object-fit:cover;opacity:.85;transition:transform .5s,opacity .3s}
 .onair-card:hover img{transform:scale(1.04);opacity:1}
 .onair-card .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:68px;border-radius:50%;background:rgba(0,92,62,.9);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2em;padding-left:6px}
-.onair-card .label{position:absolute;left:0;right:0;bottom:0;padding:20px 24px;color:#fff;font-size:.85em;font-weight:600;background:linear-gradient(to top,rgba(0,0,0,.75),transparent)}
+.onair-card .label{position:absolute;left:0;right:0;bottom:0;padding:20px 24px;color:#fff;font-size:.85em;font-weight:600;background:linear-gradient(to top,rgba(0,0,0,.92),rgba(0,0,0,.55) 65%,transparent);text-shadow:0 1px 6px rgba(0,0,0,.8)}
 
 /* ===== 5. Shorts: 9:16 세로 카드 ===== */
 /* 데스크탑: 한 줄 4장으로 크게, 5번째는 화살표로 스크롤 */
@@ -244,7 +244,8 @@ section{padding:120px 0;overflow:hidden;scroll-margin-top:130px}
 
 
 /* ===== 12. 진료실 Q&A 카드 슬라이더 ===== */
-.qa-rail,.rec-rail{padding:0 24px 8px}
+/* 슬라이더가 뷰포트 끝까지 뻗으면 우측 퀵바(1175px~)에 카드가 가려진다 — 다른 섹션과 같은 폭으로 제한 */
+.qa-rail,.rec-rail{width:min(84%,1400px);margin:0 auto;padding:0 0 8px}
 .qa-card{width:min(380px,82vw);background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:32px 30px;display:flex;flex-direction:column;gap:12px;box-shadow:0 6px 24px rgba(0,0,0,.05)}
 .qa-card .q{font-family:"Poppins",sans-serif;color:var(--main);font-weight:700;font-size:.9em}
 .qa-card h3{font-size:.95em;font-weight:600;line-height:1.5}
@@ -315,6 +316,9 @@ footer .f-copy{color:#8d8d8d;padding-top:24px}
   .sig-card{flex-direction:column;width:100%;gap:24px}
   .sig-card .pic{width:min(100%,340px)}
   .sig-card .sig-txt{padding:24px 20px;text-align:center;background:#fff;border-radius:10px;width:min(100%,340px);box-shadow:0 6px 24px rgba(0,0,0,.12)}
+  /* 모바일 카드는 작아서 1.4배면 입술·이마가 잘린다 */
+  .sig-card .pic img{transform:scale(1.2)}
+  .qa-rail,.rec-rail{width:100%;padding:0 20px 8px}
   .sig-band::after{height:55%}
   .onair-grid{grid-template-columns:1fr}
   .event-grid{grid-template-columns:1fr;max-width:400px}
@@ -415,7 +419,7 @@ footer .f-copy{color:#8d8d8d;padding-top:24px}
   </div>
   <div class="sig-tabs">
     <button class="sig-tab act" data-i="0"><img src="images/card-ptosis.jpg" alt="">눈매교정</button>
-    <button class="sig-tab" data-i="1"><img src="images/card-revision.jpg" alt="">눈재수술</button>
+    <button class="sig-tab" data-i="1"><img src="images/card-revision-2.jpg" alt="">눈재수술</button>
     <button class="sig-tab" data-i="2"><img src="images/card-teuim.jpg" alt="">트임성형</button>
     <button class="sig-tab" data-i="3"><img src="images/card-middle.jpg" alt="">중년눈성형</button>
     <button class="sig-tab" data-i="4"><img src="images/card-undereye.jpg" alt="">눈밑성형</button>
@@ -499,12 +503,12 @@ footer .f-copy{color:#8d8d8d;padding-top:24px}
   </div>
   <!-- 실제 쇼츠 6편. 썸네일은 유튜브 CDN hqdefault(16:9)를 9:16 카드에 cover 크롭 -->
   <div class="rail" id="shortsRail">
-    <a class="shorts-item" href="https://www.youtube.com/shorts/kcf-KKvCTWw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/kcf-KKvCTWw/hqdefault.jpg" alt="하니성형외과 리얼 후기 쇼츠" loading="lazy"><span>같은 사람, 다른 결과 — 리얼 후기</span></a>
-    <a class="shorts-item" href="https://www.youtube.com/shorts/zdfJ7oZFr7s" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/zdfJ7oZFr7s/hqdefault.jpg" alt="하니성형외과 리얼 후기 쇼츠 2" loading="lazy"><span>하니성형외과 리얼 후기 2</span></a>
-    <a class="shorts-item" href="https://www.youtube.com/shorts/CyJcLKF72Jk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/CyJcLKF72Jk/hqdefault.jpg" alt="눈매교정이 과하면 졸려보일까 쇼츠" loading="lazy"><span>눈매교정이 과해서 졸려보인다고?</span></a>
-    <a class="shorts-item" href="https://www.youtube.com/shorts/NJZrsgpF_do" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/NJZrsgpF_do/hqdefault.jpg" alt="절개쌍수 라인이 깊다면 쇼츠" loading="lazy"><span>절개쌍수 라인이 너무 깊다면?</span></a>
-    <a class="shorts-item" href="https://www.youtube.com/shorts/EZT5-VgOics" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/EZT5-VgOics/hqdefault.jpg" alt="뒤밑트임 후 흰자 노출 쇼츠" loading="lazy"><span>뒤밑트임 했는데 흰자가 많이 보인다면?</span></a>
-    <a class="shorts-item" href="https://www.youtube.com/shorts/T158NH6EqoU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/T158NH6EqoU/hqdefault.jpg" alt="얼굴분석 쇼츠" loading="lazy"><span>#얼굴분석 | 분석하니</span></a>
+    <a class="shorts-item" href="https://www.youtube.com/shorts/kcf-KKvCTWw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/kcf-KKvCTWw/oar2.jpg" alt="하니성형외과 리얼 후기 쇼츠" loading="lazy"><span>같은 사람, 다른 결과 — 리얼 후기</span></a>
+    <a class="shorts-item" href="https://www.youtube.com/shorts/zdfJ7oZFr7s" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/zdfJ7oZFr7s/oar2.jpg" alt="하니성형외과 리얼 후기 쇼츠 2" loading="lazy"><span>하니성형외과 리얼 후기 2</span></a>
+    <a class="shorts-item" href="https://www.youtube.com/shorts/CyJcLKF72Jk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/CyJcLKF72Jk/mqdefault.jpg" alt="눈매교정이 과하면 졸려보일까 쇼츠" loading="lazy"><span>눈매교정이 과해서 졸려보인다고?</span></a>
+    <a class="shorts-item" href="https://www.youtube.com/shorts/NJZrsgpF_do" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/NJZrsgpF_do/mqdefault.jpg" alt="절개쌍수 라인이 깊다면 쇼츠" loading="lazy"><span>절개쌍수 라인이 너무 깊다면?</span></a>
+    <a class="shorts-item" href="https://www.youtube.com/shorts/EZT5-VgOics" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/EZT5-VgOics/mqdefault.jpg" alt="뒤밑트임 후 흰자 노출 쇼츠" loading="lazy"><span>뒤밑트임 했는데 흰자가 많이 보인다면?</span></a>
+    <a class="shorts-item" href="https://www.youtube.com/shorts/T158NH6EqoU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/T158NH6EqoU/oar2.jpg" alt="얼굴분석 쇼츠" loading="lazy"><span>#얼굴분석 | 분석하니</span></a>
   </div>
   <div class="rail-ctrl"><button data-rail="shortsRail" data-dir="-1" aria-label="이전">‹</button><button data-rail="shortsRail" data-dir="1" aria-label="다음">›</button></div>
   <div class="shorts-foot">
@@ -841,7 +845,7 @@ go(0); auto();
 // 시그니처 탭
 const SIG = [
   {t:'눈매교정', d:'처진 눈꺼풀을 올려 또렷한 눈매 라인을 만드는 수술입니다. 개인의 눈 상태에 맞춰 절개 범위와 방법을 계획합니다.', img:'images/card-ptosis.jpg', pos:'45% 22%'},
-  {t:'눈재수술', d:'이전 수술 상태를 확인한 뒤, 풀린 눈·겹쌍꺼풀·흉터 등 문제에 맞는 재수술 계획을 세웁니다.', img:'images/card-revision.jpg', pos:'50% 22%'},
+  {t:'눈재수술', d:'이전 수술 상태를 확인한 뒤, 풀린 눈·겹쌍꺼풀·흉터 등 문제에 맞는 재수술 계획을 세웁니다.', img:'images/card-revision-2.jpg', pos:'76% 42%'},
   {t:'트임성형', d:'앞트임·뒷트임 등으로 원하는 눈의 느낌을 만드는 수술입니다. 과하지 않게, 원하는 인상 그대로 계획합니다.', img:'images/card-teuim.jpg', pos:'50% 28%'},
   {t:'중년눈성형', d:'상안검·하안검 등 나이에 따른 눈 주변 변화를 개선하는 수술입니다. 우아하고 자연스러운 인상을 목표로 합니다.', img:'images/card-middle.jpg', pos:'50% 20%'},
   {t:'눈밑성형', d:'눈밑 지방·다크서클 고민을 개선해 밝고 편안한 인상을 만드는 수술입니다.', img:'images/card-undereye.jpg', pos:'50% 26%'}
